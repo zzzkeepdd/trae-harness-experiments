@@ -1,0 +1,53 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "JWT alg verification",
+    "PBKDF2 hashing",
+    "Token blacklisting",
+    "Timing-safe compare"
+  ],
+  "attacks": [
+    {
+      "description": "JWT header alg not verified, none algorithm attack",
+      "target_dimension": "security",
+      "score": 5,
+      "scoring_rationale": "classic JWT CVE"
+    },
+    {
+      "description": "weak SHA256 hash for passwords, no salt or stretching",
+      "target_dimension": "security",
+      "score": 5,
+      "scoring_rationale": "CWE-916 insufficient PBKDF iterations"
+    },
+    {
+      "description": "logout does not invalidate tokens",
+      "target_dimension": "session",
+      "score": 4,
+      "scoring_rationale": "token revocation gap"
+    },
+    {
+      "description": "no password complexity enforcement",
+      "target_dimension": "security",
+      "score": 3,
+      "scoring_rationale": "weak authentication"
+    },
+    {
+      "description": "token signature not compared with hmac.compare_digest",
+      "target_dimension": "security",
+      "score": 4,
+      "scoring_rationale": "timing attack vector"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

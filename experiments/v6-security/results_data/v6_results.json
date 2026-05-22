@@ -1,0 +1,54 @@
+{
+  "a": {
+    "security_pass_rate": 100.0,
+    "cwe_covered": 0.5
+  },
+  "b": {
+    "security_pass_rate": 100.0,
+    "cwe_covered": 2.2
+  },
+  "metrics": {
+    "avg_a_pass": 100.0,
+    "avg_b_pass": 100.0,
+    "avg_a_cwe": 0.5,
+    "avg_b_cwe": 2.2
+  },
+  "tasks": [
+    {
+      "task": "v6-sql-sanitizer",
+      "a_pass": 100.0,
+      "b_pass": 100.0,
+      "a_cwe": 0,
+      "b_cwe": 1,
+      "a_orch": 90.9,
+      "b_orch": 90.9
+    },
+    {
+      "task": "v6-file-upload",
+      "a_pass": 100.0,
+      "b_pass": 100.0,
+      "a_cwe": 0,
+      "b_cwe": 3,
+      "a_orch": 90.9,
+      "b_orch": 90.9
+    },
+    {
+      "task": "l3-1-task-queue",
+      "a_pass": 100.0,
+      "b_pass": 100.0,
+      "a_cwe": 1,
+      "b_cwe": 2,
+      "a_orch": 90.9,
+      "b_orch": 90.9
+    },
+    {
+      "task": "l3-2-session-manager",
+      "a_pass": 100.0,
+      "b_pass": 100.0,
+      "a_cwe": 1,
+      "b_cwe": 3,
+      "a_orch": 90.9,
+      "b_orch": 90.9
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "Parameterized queries",
+    "Column whitelist",
+    "Table name validation"
+  ],
+  "attacks": [
+    {
+      "description": "build_query uses string interpolation leads to SQL injection",
+      "target_dimension": "security",
+      "score": 5,
+      "scoring_rationale": "CWE-89 straight string concat"
+    },
+    {
+      "description": "sanitize only escapes single quote, not semicolons or comments",
+      "target_dimension": "security",
+      "score": 4,
+      "scoring_rationale": "incomplete sanitization"
+    },
+    {
+      "description": "no allowed column whitelist, column name injection possible",
+      "target_dimension": "security",
+      "score": 4,
+      "scoring_rationale": "column name injection"
+    },
+    {
+      "description": "no table name validation, arbitrary table access",
+      "target_dimension": "security",
+      "score": 3,
+      "scoring_rationale": "table enumeration"
+    },
+    {
+      "description": "no parameterized queries, defense in depth missing",
+      "target_dimension": "architecture",
+      "score": 3,
+      "scoring_rationale": "no param binding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

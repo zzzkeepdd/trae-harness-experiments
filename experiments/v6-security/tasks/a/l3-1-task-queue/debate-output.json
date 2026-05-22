@@ -1,0 +1,52 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "Task ID validation",
+    "Graceful shutdown",
+    "Closed queue check"
+  ],
+  "attacks": [
+    {
+      "description": "Task.id is SQL-injectable, no input validation on id",
+      "target_dimension": "security",
+      "score": 5,
+      "scoring_rationale": "SQL injection via task id"
+    },
+    {
+      "description": "Task.func is arbitrary callable, code injection vector",
+      "target_dimension": "security",
+      "score": 4,
+      "scoring_rationale": "arbitrary function reference"
+    },
+    {
+      "description": "stop() does not wait for worker completion",
+      "target_dimension": "concurrency",
+      "score": 4,
+      "scoring_rationale": "AC-7 graceful shutdown violation"
+    },
+    {
+      "description": "no max_retries for failed tasks",
+      "target_dimension": "robustness",
+      "score": 3,
+      "scoring_rationale": "no retry mechanism"
+    },
+    {
+      "description": "no closed-queue rejection",
+      "target_dimension": "lifecycle",
+      "score": 3,
+      "scoring_rationale": "AC-12 lifecycle gap"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+task,a_pass,b_pass,a_cwe,b_cwe,a_orch,b_orch
+v6-sql-sanitizer,100.0,100.0,0,1,90.9,90.9
+v6-file-upload,100.0,100.0,0,3,90.9,90.9
+l3-1-task-queue,100.0,100.0,1,2,90.9,90.9
+l3-2-session-manager,100.0,100.0,1,3,90.9,90.9
