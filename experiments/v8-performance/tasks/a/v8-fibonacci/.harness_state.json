@@ -1,63 +1,63 @@
 {
-  "project_name": "v10-order-processor",
+  "project_name": "v8-fibonacci",
   "pipeline_level": "L2",
   "current_phase": "TEST_GATE",
-  "created_at": "2026-05-23T03:34:46.964481",
+  "created_at": "2026-05-23T03:33:52.686563",
   "history": [
     {
       "phase": "INIT",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.127624"
+      "time": "2026-05-23T03:33:52.781020"
     },
     {
       "phase": "PHASE_0",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.202971"
+      "time": "2026-05-23T03:33:52.827901"
     },
     {
       "phase": "PHASE_1",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.278354"
+      "time": "2026-05-23T03:33:52.875187"
     },
     {
       "phase": "PHASE_2",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.353053"
+      "time": "2026-05-23T03:33:52.923589"
     },
     {
       "phase": "GATE_1",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.479667"
+      "time": "2026-05-23T03:33:53.008832"
     },
     {
       "phase": "PHASE_3",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.554842"
+      "time": "2026-05-23T03:33:53.057064"
     },
     {
       "phase": "PHASE_4",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.630082"
+      "time": "2026-05-23T03:33:53.104682"
     },
     {
       "phase": "GATE_2",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.753268"
+      "time": "2026-05-23T03:33:53.182989"
     },
     {
       "phase": "PHASE_5",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.824804"
+      "time": "2026-05-23T03:33:53.232835"
     },
     {
       "phase": "MODULE_2_STEP_1",
       "status": "PASS",
-      "time": "2026-05-23T03:34:47.898101"
+      "time": "2026-05-23T03:33:53.282423"
     },
     {
       "phase": "TEST_GATE",
       "status": "FAIL",
-      "time": "2026-05-23T03:34:48.024169",
+      "time": "2026-05-23T03:33:53.360176",
       "message": "FAIL — C27 测试即门: 1 个文件缺少测试\n  - src\\__init__.py 缺少测试文件 (期望 test___init__.py 或 __init___test.py)\n"
     }
   ],
