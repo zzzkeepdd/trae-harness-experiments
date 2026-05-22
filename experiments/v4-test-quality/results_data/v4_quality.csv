@@ -1,0 +1,7 @@
+task,level,a_coverage,b_coverage,a_mutation,b_mutation,a_assertions,b_assertions,a_functions,b_functions,a_density,b_density,coverage_delta,mutation_delta
+l1-1-string-utils,L1,100%,100%,0%,0%,7,34,4,4,1.75,8.5,0.0,0.0
+l1-2-list-utils,L1,100%,100%,0%,0%,5,24,4,4,1.25,6.0,0.0,0.0
+l2-1-cache,L2,25%,75%,0%,0%,6,22,8,8,0.75,2.75,0.5,0.0
+l2-2-csv-processor,L2,40%,100%,0%,0%,3,18,5,5,0.6,3.6,0.6,0.0
+l3-1-task-queue,L3,71%,71%,0%,0%,2,7,7,7,0.29,1.0,0.0,0.0
+l3-2-session-manager,L3,36%,64%,0%,0%,5,19,11,11,0.45,1.73,0.272,0.0

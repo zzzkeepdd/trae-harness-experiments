@@ -31,3 +31,24 @@ def test_closed_rejects():
         assert False, "should raise"
     except RuntimeError:
         pass
+
+def test_retry():
+    calls = []
+    def flaky():
+        calls.append(1)
+        if len(calls) < 3:
+            raise ValueError("fail")
+        return "ok"
+    q = TaskQueue(max_workers=1); q.start()
+    q.submit(Task(priority=1, id="flaky", func=flaky, max_retries=3))
+    result = q.get_result("flaky", timeout=5)
+    assert result == "ok"
+    assert len(calls) == 3
+    q.stop()
+
+def test_invalid_workers():
+    try:
+        TaskQueue(max_workers=0)
+        assert False
+    except ValueError:
+        pass

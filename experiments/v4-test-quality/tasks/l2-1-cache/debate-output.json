@@ -24,12 +24,6 @@
       "target_dimension": "performance",
       "score": 3,
       "scoring_rationale": "acceptable for L2"
-    },
-    {
-      "description": "LRU eviction uses OrderedDict iter order",
-      "target_dimension": "correctness",
-      "score": 2,
-      "scoring_rationale": "Python 3.7+ stable"
     }
   ],
   "dimensions_covered": [

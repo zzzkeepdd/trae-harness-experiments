@@ -115,6 +115,24 @@ def run_experiment(cfg: LoopConfig) -> dict:
     return results
 
 
+def parse_csv_or_text(results_file: Path) -> dict:
+    content = results_file.read_text(encoding="utf-8").strip()
+    if content.startswith("{"):
+        return json.loads(content)
+    lines = content.split("\n")
+    if len(lines) > 1 and "," in lines[1]:
+        header = [h.strip().lower() for h in lines[0].split(",")]
+        vals = [v.strip() for v in lines[1].split(",")]
+        d = dict(zip(header, vals))
+        for k, v in d.items():
+            try: d[k] = int(v)
+            except ValueError:
+                try: d[k] = float(v)
+                except ValueError: pass
+        return d
+    return {}
+
+
 def parse_experiment_results(cfg: LoopConfig) -> dict:
     print(f"\n[步骤 2] 解析实验结果...")
     results_file = cfg.results_file
@@ -371,10 +389,13 @@ def merge_proposals(proposals: list[dict]):
 
     if "## 修订记录" in text:
         text = text.replace("## 修订记录", f"{new_rules}\n\n## 修订记录")
-        text = text.replace(
-            re.search(r"(## 修订记录\n- .+?\n)", text).group(1),
-            re.search(r"(## 修订记录\n- .+?\n)", text).group(1) + f"  {new_record}\n"
-        )
+        rev_match = re.search(r"(## 修订记录\n\n- .+?:\s)", text)
+        if rev_match:
+            text = text.replace(rev_match.group(1), rev_match.group(1) + f" {new_record}\n")
+        else:
+            rev_match = re.search(r"(## 修订记录\n)", text)
+            if rev_match:
+                text = text.replace(rev_match.group(1), rev_match.group(1) + f"\n{new_record}\n")
     else:
         text += f"\n{new_rules}\n\n## 修订记录\n{new_record}\n"
 
@@ -389,7 +410,7 @@ def merge_proposals(proposals: list[dict]):
     )
     print("  ✓ proposals.md 已清空")
 
-    count = len(HARNESS_REPO.glob("references/constitution/full-constitution.md"))
+    count = len(list(HARNESS_REPO.glob("references/constitution/full-constitution.md")))
     rule_lines = [l for l in text.split("\n") if l.startswith("| C")]
     rule_count = len(rule_lines)
     if rule_count > 25:

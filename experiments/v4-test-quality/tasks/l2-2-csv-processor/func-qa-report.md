@@ -1,2 +1,0 @@
-# Func QA
-E2E: ALL PASSED

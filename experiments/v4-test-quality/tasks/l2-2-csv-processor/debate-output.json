@@ -11,7 +11,7 @@
       "description": "filter_rows str(val) breaks numeric column filtering",
       "target_dimension": "correctness",
       "score": 4,
-      "scoring_rationale": "core feature broken"
+      "scoring_rationale": "numeric compare broken"
     },
     {
       "description": "read_csv catches Exception silently hiding all errors",
@@ -24,12 +24,6 @@
       "target_dimension": "API",
       "score": 3,
       "scoring_rationale": "interface mismatch"
-    },
-    {
-      "description": "write_csv empty data creates empty file without header",
-      "target_dimension": "consistency",
-      "score": 2,
-      "scoring_rationale": "roundtrip works"
     }
   ],
   "dimensions_covered": [

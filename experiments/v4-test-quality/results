@@ -1,0 +1,14 @@
+{
+  "a": {
+    "passed": 28,
+    "total": 39
+  },
+  "b": {
+    "passed": 124,
+    "total": 39
+  },
+  "avg_a_coverage": 62.0,
+  "avg_b_coverage": 85.0,
+  "avg_a_mutation": 0.0,
+  "avg_b_mutation": 0.0
+}
