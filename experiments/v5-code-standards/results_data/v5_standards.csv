@@ -1,0 +1,7 @@
+task,level,a_flake8,b_flake8,a_pylint,b_pylint,a_mi,b_mi,a_cc,b_cc,a_long_lines,b_long_lines,a_docs_miss,b_docs_miss,a_bad_vars,b_bad_vars,a_magic,b_magic,flake8_available,pylint_available,radon_available
+l1-1-string-utils,L1,0,0,0.0,0.0,0,0,0,0,0,0,4,4,1,2,2,2,True,True,False
+l1-2-list-utils,L1,0,0,0.0,0.0,0,0,0,0,0,0,4,4,10,2,0,0,True,True,False
+l2-1-cache,L2,0,0,0.0,0.0,0,0,0,0,0,0,6,6,1,0,0,0,True,True,False
+l2-2-csv-processor,L2,0,0,0.0,0.0,0,0,0,0,0,1,5,5,9,0,2,2,True,True,False
+l3-1-task-queue,L3,0,0,0.0,0.0,0,0,0,0,0,1,5,5,3,0,3,3,True,True,False
+l3-2-session-manager,L3,0,0,0.0,0.0,0,0,0,0,6,7,7,7,4,3,9,9,True,True,False

@@ -1,6 +1,6 @@
 # V6 SECURITY 实验报告
 
-> 模型: deepseek-v4-pro | Harness: trae-harness v1.3 | 时间: 2026-05-23 04:05
+> 模型: deepseek-v4-pro | Harness: trae-harness v1.3 | 时间: 2026-05-23 05:00
 
 ## 实验设计
 

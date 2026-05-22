@@ -1,0 +1,155 @@
+{
+  "a": {
+    "flake8_violations": 0.0,
+    "pylint_score": 0.0,
+    "mi": 0.0,
+    "cc": 0.0
+  },
+  "b": {
+    "flake8_violations": 0.0,
+    "pylint_score": 0.0,
+    "mi": 0.0,
+    "cc": 0.0
+  },
+  "metrics": {
+    "avg_a_flake8": 0.0,
+    "avg_b_flake8": 0.0,
+    "avg_a_pylint": 0.0,
+    "avg_b_pylint": 0.0,
+    "avg_a_mi": 0.0,
+    "avg_b_mi": 0.0,
+    "avg_a_cc": 0.0,
+    "avg_b_cc": 0.0,
+    "flake8_available": true,
+    "pylint_available": true,
+    "radon_available": false
+  },
+  "tasks": [
+    {
+      "task": "l1-1-string-utils",
+      "level": "L1",
+      "a": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "b": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "improvement": {
+        "flake8_delta": 0,
+        "pylint_delta": 0.0,
+        "mi_delta": 0
+      }
+    },
+    {
+      "task": "l1-2-list-utils",
+      "level": "L1",
+      "a": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "b": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "improvement": {
+        "flake8_delta": 0,
+        "pylint_delta": 0.0,
+        "mi_delta": 0
+      }
+    },
+    {
+      "task": "l2-1-cache",
+      "level": "L2",
+      "a": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "b": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "improvement": {
+        "flake8_delta": 0,
+        "pylint_delta": 0.0,
+        "mi_delta": 0
+      }
+    },
+    {
+      "task": "l2-2-csv-processor",
+      "level": "L2",
+      "a": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "b": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "improvement": {
+        "flake8_delta": 0,
+        "pylint_delta": 0.0,
+        "mi_delta": 0
+      }
+    },
+    {
+      "task": "l3-1-task-queue",
+      "level": "L3",
+      "a": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "b": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "improvement": {
+        "flake8_delta": 0,
+        "pylint_delta": 0.0,
+        "mi_delta": 0
+      }
+    },
+    {
+      "task": "l3-2-session-manager",
+      "level": "L3",
+      "a": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "b": {
+        "flake8": 0,
+        "pylint": 0.0,
+        "mi": 0,
+        "cc": 0
+      },
+      "improvement": {
+        "flake8_delta": 0,
+        "pylint_delta": 0.0,
+        "mi_delta": 0
+      }
+    }
+  ]
+}

@@ -1,63 +1,63 @@
 {
-  "project_name": "l3-1-task-queue",
+  "project_name": "l1-2-list-utils",
   "pipeline_level": "L2",
   "current_phase": "TEST_GATE",
-  "created_at": "2026-05-23T05:00:10.221339",
+  "created_at": "2026-05-23T04:43:47.355954",
   "history": [
     {
       "phase": "INIT",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.313839"
+      "time": "2026-05-23T04:43:47.462059"
     },
     {
       "phase": "PHASE_0",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.359725"
+      "time": "2026-05-23T04:43:47.511667"
     },
     {
       "phase": "PHASE_1",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.406950"
+      "time": "2026-05-23T04:43:47.561347"
     },
     {
       "phase": "PHASE_2",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.453260"
+      "time": "2026-05-23T04:43:47.611109"
     },
     {
       "phase": "GATE_1",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.532621"
+      "time": "2026-05-23T04:43:47.695121"
     },
     {
       "phase": "PHASE_3",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.578440"
+      "time": "2026-05-23T04:43:47.741834"
     },
     {
       "phase": "PHASE_4",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.625141"
+      "time": "2026-05-23T04:43:47.791169"
     },
     {
       "phase": "GATE_2",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.700837"
+      "time": "2026-05-23T04:43:47.870265"
     },
     {
       "phase": "PHASE_5",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.747486"
+      "time": "2026-05-23T04:43:47.919244"
     },
     {
       "phase": "MODULE_2_STEP_1",
       "status": "PASS",
-      "time": "2026-05-23T05:00:10.795302"
+      "time": "2026-05-23T04:43:47.968051"
     },
     {
       "phase": "TEST_GATE",
       "status": "FAIL",
-      "time": "2026-05-23T05:00:10.871855",
+      "time": "2026-05-23T04:43:48.048105",
       "message": "FAIL — C27 测试即门: 1 个文件缺少测试\n  - src\\__init__.py 缺少测试文件 (期望 test___init__.py 或 __init___test.py)\n"
     }
   ],

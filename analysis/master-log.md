@@ -1,6 +1,6 @@
 # Harness 实验主日志
 
-> 最后更新: 2026-05-23 03:38
+> 最后更新: 2026-05-23 04:13
 > 宪法版本: v1.4.0
 > 模型: deepseek-v4-pro
 
@@ -8,13 +8,11 @@
 
 | 实验 | 优先级 | 结果摘要 | 时间 |
 |------|:--:|------|------|
-| v10-swebench-style | P0 | A=0%→B=0% (Δ+0%) | 03:35 |
-| v5-code-standards | P1 | exit=1 | 03:35 |
-| v6-security | P1 | A=0%→B=0% (Δ+0%) | 03:35 |
-| v7-module3-learning | P1 | exit=1 | 03:35 |
-| v8-performance | P2 | A=0%→B=0% (Δ+0%) | 03:38 |
-| v9-humaneval-style | P3 | exit=1 | 03:38 |
-| v11-livecodebench-style | P3 | A=0%→B=0% (Δ+0%) | 03:38 |
+| v5-code-standards | P1 | exit=1 | 04:04 |
+| v6-security | P1 | A=0%→B=0% (Δ+0%) | 04:06 |
+| v7-module3-learning | P1 | A=0%→B=0% (Δ+0%) | 04:08 |
+| v8-performance | P2 | A=0%→B=0% (Δ+0%) | 04:12 |
+| v9-humaneval-style | P3 | A=0%→B=0% (Δ+0%) | 04:13 |
 
 
 ## 历史实验

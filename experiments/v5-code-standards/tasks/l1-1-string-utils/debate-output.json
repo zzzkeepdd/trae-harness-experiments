@@ -1,0 +1,52 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L1",
+  "must_fix": [
+    "Add docstrings to all public functions",
+    "Use descriptive variable names",
+    "Extract regex patterns to constants"
+  ],
+  "attacks": [
+    {
+      "description": "function names too short, missing docstrings across all 4 functions",
+      "target_dimension": "naming",
+      "score": 4,
+      "scoring_rationale": "unreadable API surface"
+    },
+    {
+      "description": "single-letter variable names x, a, z, y, t obscure data flow",
+      "target_dimension": "readability",
+      "score": 4,
+      "scoring_rationale": "debugging cost multiplier"
+    },
+    {
+      "description": "magic regex patterns embedded without constants",
+      "target_dimension": "maintainability",
+      "score": 3,
+      "scoring_rationale": "pattern reuse impossible"
+    },
+    {
+      "description": "Additional performance analysis for L1",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional boundary analysis for L1",
+      "target_dimension": "boundary",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

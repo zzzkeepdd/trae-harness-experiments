@@ -2,62 +2,62 @@
   "project_name": "v6-sql-sanitizer",
   "pipeline_level": "L2",
   "current_phase": "TEST_GATE",
-  "created_at": "2026-05-23T04:05:46.453168",
+  "created_at": "2026-05-23T05:00:07.990609",
   "history": [
     {
       "phase": "INIT",
       "status": "PASS",
-      "time": "2026-05-23T04:05:46.611419"
+      "time": "2026-05-23T05:00:08.082876"
     },
     {
       "phase": "PHASE_0",
       "status": "PASS",
-      "time": "2026-05-23T04:05:46.689881"
+      "time": "2026-05-23T05:00:08.129954"
     },
     {
       "phase": "PHASE_1",
       "status": "PASS",
-      "time": "2026-05-23T04:05:46.768963"
+      "time": "2026-05-23T05:00:08.177216"
     },
     {
       "phase": "PHASE_2",
       "status": "PASS",
-      "time": "2026-05-23T04:05:46.849701"
+      "time": "2026-05-23T05:00:08.225458"
     },
     {
       "phase": "GATE_1",
       "status": "PASS",
-      "time": "2026-05-23T04:05:46.990472"
+      "time": "2026-05-23T05:00:08.304954"
     },
     {
       "phase": "PHASE_3",
       "status": "PASS",
-      "time": "2026-05-23T04:05:47.078778"
+      "time": "2026-05-23T05:00:08.353044"
     },
     {
       "phase": "PHASE_4",
       "status": "PASS",
-      "time": "2026-05-23T04:05:47.157592"
+      "time": "2026-05-23T05:00:08.402076"
     },
     {
       "phase": "GATE_2",
       "status": "PASS",
-      "time": "2026-05-23T04:05:47.285221"
+      "time": "2026-05-23T05:00:08.480952"
     },
     {
       "phase": "PHASE_5",
       "status": "PASS",
-      "time": "2026-05-23T04:05:47.358763"
+      "time": "2026-05-23T05:00:08.528410"
     },
     {
       "phase": "MODULE_2_STEP_1",
       "status": "PASS",
-      "time": "2026-05-23T04:05:47.433052"
+      "time": "2026-05-23T05:00:08.574687"
     },
     {
       "phase": "TEST_GATE",
       "status": "FAIL",
-      "time": "2026-05-23T04:05:47.557839",
+      "time": "2026-05-23T05:00:08.649972",
       "message": "FAIL — C27 测试即门: 1 个文件缺少测试\n  - src\\__init__.py 缺少测试文件 (期望 test___init__.py 或 __init___test.py)\n"
     }
   ],

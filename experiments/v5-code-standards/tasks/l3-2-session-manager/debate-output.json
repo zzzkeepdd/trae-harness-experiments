@@ -1,0 +1,52 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "Restore 'self' and descriptive names",
+    "Rename private methods clearly",
+    "Add security documentation"
+  ],
+  "attacks": [
+    {
+      "description": "self→s, attributes: se, ttl, us, tk, bl, on, lk, pm — 8 cryptic names",
+      "target_dimension": "naming",
+      "score": 5,
+      "scoring_rationale": "auth module requires maximum readability"
+    },
+    {
+      "description": "method names: _hp, _vp, _bt — abbreviated private methods obscure password/token internals",
+      "target_dimension": "naming",
+      "score": 4,
+      "scoring_rationale": "security code must be auditable"
+    },
+    {
+      "description": "no docstrings whatsoever on SessionManager — JWT security semantics undocumented",
+      "target_dimension": "documentation",
+      "score": 5,
+      "scoring_rationale": "security-critical code without documentation"
+    },
+    {
+      "description": "Additional performance analysis for L1",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional boundary analysis for L1",
+      "target_dimension": "boundary",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

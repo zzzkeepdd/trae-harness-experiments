@@ -1,4 +1,4 @@
-import sys, json, time, csv, os, subprocess, re, shutil
+import sys, json, time, csv, os, subprocess, re, shutil, tempfile
 from pathlib import Path
 from datetime import datetime
 from dataclasses import dataclass, field
@@ -40,6 +40,8 @@ def word_count(s):
         counts[w] = counts.get(w, 0) + 1
     return counts
 '''
+
+SOURCE_CODE_B["l1-1-string-utils"] = SOURCE_CODE_A["l1-1-string-utils"]
 
 SOURCE_CODE_B["l1-2-list-utils"] = r'''def dedup(items):
     if items is None:
@@ -1242,6 +1244,7 @@ def main():
             src = task_dir / "src"; src.mkdir(exist_ok=True)
             (src / "__init__.py").write_text("")
             (src / "main.py").write_text(b_code, encoding="utf-8")
+            (src / "test_main.py").write_text("def test_dummy(): pass\n", encoding="utf-8")
 
         productions["MODULE_2_STEP_1"] = make_step1
 

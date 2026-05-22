@@ -2,62 +2,62 @@
   "project_name": "l3-2-session-manager",
   "pipeline_level": "L2",
   "current_phase": "TEST_GATE",
-  "created_at": "2026-05-23T04:05:55.801316",
+  "created_at": "2026-05-23T05:00:12.421863",
   "history": [
     {
       "phase": "INIT",
       "status": "PASS",
-      "time": "2026-05-23T04:05:55.959753"
+      "time": "2026-05-23T05:00:12.514043"
     },
     {
       "phase": "PHASE_0",
       "status": "PASS",
-      "time": "2026-05-23T04:05:56.041127"
+      "time": "2026-05-23T05:00:12.561633"
     },
     {
       "phase": "PHASE_1",
       "status": "PASS",
-      "time": "2026-05-23T04:05:56.119958"
+      "time": "2026-05-23T05:00:12.610312"
     },
     {
       "phase": "PHASE_2",
       "status": "PASS",
-      "time": "2026-05-23T04:05:56.197422"
+      "time": "2026-05-23T05:00:12.657065"
     },
     {
       "phase": "GATE_1",
       "status": "PASS",
-      "time": "2026-05-23T04:05:56.340755"
+      "time": "2026-05-23T05:00:12.737174"
     },
     {
       "phase": "PHASE_3",
       "status": "PASS",
-      "time": "2026-05-23T04:05:56.421802"
+      "time": "2026-05-23T05:00:12.782368"
     },
     {
       "phase": "PHASE_4",
       "status": "PASS",
-      "time": "2026-05-23T04:05:56.498962"
+      "time": "2026-05-23T05:00:12.830194"
     },
     {
       "phase": "GATE_2",
       "status": "PASS",
-      "time": "2026-05-23T04:05:56.626524"
+      "time": "2026-05-23T05:00:12.907253"
     },
     {
       "phase": "PHASE_5",
       "status": "PASS",
-      "time": "2026-05-23T04:05:56.702827"
+      "time": "2026-05-23T05:00:12.953081"
     },
     {
       "phase": "MODULE_2_STEP_1",
       "status": "PASS",
-      "time": "2026-05-23T04:05:56.779128"
+      "time": "2026-05-23T05:00:13.000155"
     },
     {
       "phase": "TEST_GATE",
       "status": "FAIL",
-      "time": "2026-05-23T04:05:56.905499",
+      "time": "2026-05-23T05:00:13.075608",
       "message": "FAIL — C27 测试即门: 1 个文件缺少测试\n  - src\\__init__.py 缺少测试文件 (期望 test___init__.py 或 __init___test.py)\n"
     }
   ],
