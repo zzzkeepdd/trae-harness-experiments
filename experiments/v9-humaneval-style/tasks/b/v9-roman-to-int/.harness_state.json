@@ -1,0 +1,35 @@
+{
+  "project_name": "v9-roman-to-int",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-23T05:04:29.897825",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-23T05:04:29.987667"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-23T05:04:30.035109"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-23T05:04:30.081936"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-23T05:04:30.127680"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-23T05:04:30.206508",
+      "message": "FAIL — 1 项不合规：\n  - attacks[0] scoring_rationale 过短或缺失\n"
+    }
+  ],
+  "notes": ""
+}
