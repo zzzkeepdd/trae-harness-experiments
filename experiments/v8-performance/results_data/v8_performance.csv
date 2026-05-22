@@ -1,0 +1,5 @@
+task,a_n100_ms,a_n1000_ms,b_n100_ms,b_n1000_ms,speedup,a_complexity,b_complexity,a_orch_rate,b_orch_rate
+v8-fibonacci,-1,-1,0.01,0.06,-16.67,O(2^n),O(n),90.9,90.9
+v8-sort-dedup,4.29,38.66,4.47,4.25,9.1,O(n²),O(n log n),90.9,90.9
+v8-matrix-multiply,0.09,2.12,0.15,1.57,1.35,O(n³),O(n².8),90.9,90.9
+v8-text-search,0.04,3.28,0.05,4.65,0.71,O(n*m),O(n+m),90.9,90.9
