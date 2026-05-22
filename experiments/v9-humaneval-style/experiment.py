@@ -229,6 +229,15 @@ for tid in ["v9-is-valid-email","v9-parse-url","v9-fibonacci-nth","v9-merge-sort
             {"description": "Additional performance analysis for L1", "target_dimension": "performance", "score": 3, "scoring_rationale": "threshold padding"},
             {"description": "Additional boundary analysis for L1", "target_dimension": "boundary", "score": 3, "scoring_rationale": "threshold padding"}],"must_fix":["Handle edge cases"]}
 
+FUNC_NAMES = {
+    "v9-is-valid-email": "is_valid_email",
+    "v9-parse-url": "parse_url",
+    "v9-fibonacci-nth": "fibonacci_nth",
+    "v9-merge-sorted-lists": "merge_sorted_lists",
+    "v9-binary-search": "binary_search",
+    "v9-roman-to-int": "roman_to_int",
+}
+
 def run_tests(code, tid):
     fn=FUNC_NAMES[tid]; cases=TEST_CASES[tid]
     td=Path(tempfile.mkdtemp(prefix="vt9_"))

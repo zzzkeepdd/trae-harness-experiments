@@ -7,7 +7,7 @@ from typing import Optional
 PATH_HARNESS = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PATH_HARNESS))
 from real_harness import run_harness_full, build_productions
-PYTHON_EXE = r"C:\Program Files\Python312\python.exe"
+PYTHON_EXE = r"C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
 
 SOURCE_CODE_A = {}
 SOURCE_CODE_B = {}
@@ -41,7 +41,7 @@ def word_count(s):
     return counts
 '''
 
-SOURCE_CODE["l1-2-list-utils"] = r'''def dedup(items):
+SOURCE_CODE_B["l1-2-list-utils"] = r'''def dedup(items):
     if items is None:
         return []
     seen = set()
@@ -88,7 +88,7 @@ def top_n(items, n, key_fn=None):
     return sorted_items[:n]
 '''
 
-SOURCE_CODE["l2-1-cache"] = r'''import time
+SOURCE_CODE_B["l2-1-cache"] = r'''import time
 import threading
 from collections import OrderedDict
 
@@ -153,7 +153,7 @@ class Cache:
             self._ttl.pop(k, None)
 '''
 
-SOURCE_CODE["l2-2-csv-processor"] = r'''import csv
+SOURCE_CODE_B["l2-2-csv-processor"] = r'''import csv
 import os
 
 def read_csv(path, encoding="utf-8"):
@@ -229,7 +229,7 @@ def process_pipeline(input_path, output_path, filter_cond, group_by_col, agg_col
     write_csv(aggregated, output_path)
 '''
 
-SOURCE_CODE["l3-1-task-queue"] = r'''import threading
+SOURCE_CODE_B["l3-1-task-queue"] = r'''import threading
 import queue
 import time
 import os
@@ -344,7 +344,7 @@ class TaskQueue:
             self._queue.task_done()
 '''
 
-SOURCE_CODE["l3-2-session-manager"] = r'''import hashlib
+SOURCE_CODE_B["l3-2-session-manager"] = r'''import hashlib
 import hmac
 import json
 import base64
@@ -1226,7 +1226,7 @@ def main():
         print(f"{'='*70}")
 
         a_code = A_CODE[task_id]
-        b_code = SOURCE_CODE[task_id]
+        b_code = SOURCE_CODE_B[task_id]
 
         print(f"  A 组 (DSV4 Pro 直出 — 含 code smell)...")
         a_metrics = measure_code_standards(a_code, task_id, "A")

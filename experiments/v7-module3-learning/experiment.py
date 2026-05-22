@@ -602,7 +602,7 @@ def measure_round(tasks,round_num,base_dir):
         td=base_dir/"tasks"/f"r{round_num}"/tid
         if td.exists(): shutil.rmtree(str(td),ignore_errors=True)
         td.mkdir(parents=True,exist_ok=True)
-        sc=SOURCE_CODE[tid]; pr=build_productions(td,level,info["attacks"],info["must_fix"],round_num)
+        sc=SOURCE_CODE[tid]; pr=build_productions(td,level,info["attacks"],info["must_fix"])
 
         def ms1():
             s=td/"src"; s.mkdir(exist_ok=True); (s/"__init__.py").write_text("")
