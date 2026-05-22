@@ -1,0 +1,45 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Validate cursor",
+    "API semantics"
+  ],
+  "attacks": [
+    {
+      "description": "page<1 coercion",
+      "target_dimension": "x",
+      "score": 4,
+      "scoring_rationale": ""
+    },
+    {
+      "description": "cursor type",
+      "target_dimension": "x",
+      "score": 3,
+      "scoring_rationale": ""
+    },
+    {
+      "description": "no dedup",
+      "target_dimension": "x",
+      "score": 3,
+      "scoring_rationale": ""
+    },
+    {
+      "description": "large page DoS",
+      "target_dimension": "x",
+      "score": 3,
+      "scoring_rationale": ""
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "rounds": [
+    {
+      "round": 1,
+      "recurrence": 20,
+      "rules_hit": 0,
+      "coverage": 0.621,
+      "assertions": 18
+    },
+    {
+      "round": 2,
+      "recurrence": 8,
+      "rules_hit": 5,
+      "coverage": 0.801,
+      "assertions": 64
+    },
+    {
+      "round": 3,
+      "recurrence": 2,
+      "rules_hit": 8,
+      "coverage": 0.826,
+      "assertions": 72
+    }
+  ],
+  "metrics": {
+    "recurrence_reduction": 0.917,
+    "cumulative_rules": 13
+  },
+  "a": {
+    "final_rate": 1.0
+  },
+  "b": {
+    "final_rate": 0.083
+  }
+}

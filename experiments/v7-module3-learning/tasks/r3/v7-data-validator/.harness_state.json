@@ -1,0 +1,35 @@
+{
+  "project_name": "v7-data-validator",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-23T04:08:12.259874",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-23T04:08:12.427589"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-23T04:08:12.504558"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-23T04:08:12.582087"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-23T04:08:12.656990"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-23T04:08:12.783897",
+      "message": "FAIL — 5 项不合规：\n  - attacks[0] scoring_rationale 过短或缺失\n  - attacks[1] description 过短或缺失\n  - attacks[1] scoring_rationale 过短或缺失\n  - attacks[2] scoring_rationale 过短或缺失\n  - attacks[3] scoring_rationale 过短或缺失\n"
+    }
+  ],
+  "notes": ""
+}

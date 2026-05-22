@@ -1,0 +1,35 @@
+{
+  "project_name": "l2-2-csv-processor",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-23T04:07:58.455690",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-23T04:07:58.611485"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-23T04:07:58.686749"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-23T04:07:58.762637"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-23T04:07:58.836737"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-23T04:07:58.968335",
+      "message": "FAIL — 4 项不合规：\n  - attacks[0] scoring_rationale 过短或缺失\n  - attacks[1] scoring_rationale 过短或缺失\n  - attacks[2] scoring_rationale 过短或缺失\n  - attacks[3] scoring_rationale 过短或缺失\n"
+    }
+  ],
+  "notes": ""
+}

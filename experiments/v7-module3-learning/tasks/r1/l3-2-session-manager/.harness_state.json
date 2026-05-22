@@ -1,0 +1,35 @@
+{
+  "project_name": "l3-2-session-manager",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-23T04:07:53.802238",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-23T04:07:53.977210"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-23T04:07:54.056051"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-23T04:07:54.133293"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-23T04:07:54.212620"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-23T04:07:54.354758",
+      "message": "FAIL — 6 项不合规：\n  - attacks[0] scoring_rationale 过短或缺失\n  - attacks[1] scoring_rationale 过短或缺失\n  - attacks[2] scoring_rationale 过短或缺失\n  - attacks[3] scoring_rationale 过短或缺失\n  - attacks[4] description 过短或缺失\n  - attacks[4] scoring_rationale 过短或缺失\n"
+    }
+  ],
+  "notes": ""
+}
