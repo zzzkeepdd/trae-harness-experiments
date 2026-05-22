@@ -1,0 +1,14 @@
+{
+  "mode": "harness",
+  "code": "d:\\harness测试\\ab-exp\\results\\l3-1-task-queue\\harness\\l3-1-task-queue_harness_code.py",
+  "defect_count": 0,
+  "loc": 86,
+  "duration_sec": 0.0,
+  "debate_attack_count": 4,
+  "debate_high_score_count": 4,
+  "must_fix_count": 3,
+  "gate1_pass": true,
+  "gate2_pass": true,
+  "gate3_pass": true,
+  "audit_pass": true
+}

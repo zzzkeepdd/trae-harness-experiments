@@ -1,0 +1,11 @@
+{
+  "mode": "no-harness",
+  "code": "d:\\harness测试\\ab-exp\\results\\l3-2-session-manager\\noharness\\l3-2-session-manager_noharness_code.py",
+  "defect_count": 1,
+  "loc": 83,
+  "duration_sec": 0.0,
+  "audit_pass": false,
+  "debate_attack_count": 0,
+  "debate_high_score_count": 0,
+  "must_fix_count": 0
+}

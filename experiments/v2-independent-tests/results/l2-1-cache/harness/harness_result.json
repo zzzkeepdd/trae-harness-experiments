@@ -1,0 +1,14 @@
+{
+  "mode": "harness",
+  "code": "d:\\harness测试\\ab-exp\\results\\l2-1-cache\\harness\\l2-1-cache_harness_code.py",
+  "defect_count": 0,
+  "loc": 65,
+  "duration_sec": 0.0,
+  "debate_attack_count": 3,
+  "debate_high_score_count": 3,
+  "must_fix_count": 2,
+  "gate1_pass": true,
+  "gate2_pass": true,
+  "gate3_pass": true,
+  "audit_pass": true
+}

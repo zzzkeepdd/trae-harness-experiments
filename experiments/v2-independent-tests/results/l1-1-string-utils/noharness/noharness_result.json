@@ -1,0 +1,12 @@
+{
+  "mode": "no-harness",
+  "code": "d:\\harness测试\\ab-exp\\results\\l1-1-string-utils\\noharness\\l1-1-string-utils_noharness_code.py",
+  "test_code": null,
+  "defect_count": 0,
+  "loc": 30,
+  "duration_sec": 0.0,
+  "audit_pass": false,
+  "debate_attack_count": 0,
+  "debate_high_score_count": 0,
+  "must_fix_count": 0
+}

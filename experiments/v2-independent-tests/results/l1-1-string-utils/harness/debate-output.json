@@ -1,0 +1,56 @@
+{
+  "attacks": [
+    {
+      "description": "reverse/word_count None handling inconsistent",
+      "target_dimension": "boundary",
+      "score": 4,
+      "scoring_rationale": "None handling inconsistency"
+    },
+    {
+      "description": "is_palindrome regex r'[^a-zA-Z0-9]' strips non-ASCII",
+      "target_dimension": "boundary",
+      "score": 3,
+      "scoring_rationale": "i18n palindrome misdetection"
+    },
+    {
+      "description": "word_count uses \\b\\w+\\b splitting hyphenated words",
+      "target_dimension": "robustness",
+      "score": 3,
+      "scoring_rationale": "word counting unexpected"
+    },
+    {
+      "description": "to_title_case str.title() mishandles apostrophes",
+      "target_dimension": "robustness",
+      "score": 2,
+      "scoring_rationale": "edge case"
+    },
+    {
+      "description": "None input handling should be uniform across functions",
+      "target_dimension": "consistency",
+      "score": 4,
+      "scoring_rationale": "consistency is key for maintainability"
+    },
+    {
+      "description": "empty string is_palindrome returns True (semantic debate)",
+      "target_dimension": "boundary",
+      "score": 2,
+      "scoring_rationale": "semantic edge case"
+    }
+  ],
+  "must_fix": [
+    "Unify None handling policy",
+    "Precise word boundary definition"
+  ],
+  "rounds_completed": 1,
+  "converged": true,
+  "dimensions_covered": [
+    {
+      "name": "boundary",
+      "status": "covered"
+    },
+    {
+      "name": "robustness",
+      "status": "covered"
+    }
+  ]
+}

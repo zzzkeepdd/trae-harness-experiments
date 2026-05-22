@@ -1,0 +1,38 @@
+{
+  "attacks": [
+    {
+      "description": "TTL expired entries accumulate without cleanup",
+      "target_dimension": "memory",
+      "score": 4,
+      "scoring_rationale": "memory leak risk"
+    },
+    {
+      "description": "expired key pollutes LRU before move_to_end check",
+      "target_dimension": "TTL race",
+      "score": 5,
+      "scoring_rationale": "AC-13 expired key must not pollute LRU"
+    },
+    {
+      "description": "single lock granularity too coarse for high concurrency",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "acceptable for L2"
+    }
+  ],
+  "must_fix": [
+    "AC-13: check expiry before LRU move_to_end",
+    "lazy eviction of expired entries"
+  ],
+  "rounds_completed": 1,
+  "converged": true,
+  "dimensions_covered": [
+    {
+      "name": "TTL+LRU",
+      "status": "covered"
+    },
+    {
+      "name": "concurrency",
+      "status": "covered"
+    }
+  ]
+}

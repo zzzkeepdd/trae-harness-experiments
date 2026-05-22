@@ -1,0 +1,11 @@
+{
+  "mode": "no-harness",
+  "code": "d:\\harness测试\\ab-exp\\results\\l2-1-cache\\noharness\\l2-1-cache_noharness_code.py",
+  "defect_count": 0,
+  "loc": 56,
+  "duration_sec": 0.0,
+  "audit_pass": false,
+  "debate_attack_count": 0,
+  "debate_high_score_count": 0,
+  "must_fix_count": 0
+}

@@ -1,0 +1,45 @@
+{
+  "attacks": [
+    {
+      "description": "stop() does not wait for workers to finish (AC-7)",
+      "target_dimension": "graceful shutdown",
+      "score": 5,
+      "scoring_rationale": "AC-7 core requirement not met"
+    },
+    {
+      "description": "task.timeout not actually implemented (AC-6)",
+      "target_dimension": "timeout mechanism",
+      "score": 5,
+      "scoring_rationale": "AC-6 core functionality missing"
+    },
+    {
+      "description": "submit race condition: _running check before start",
+      "target_dimension": "concurrency",
+      "score": 4,
+      "scoring_rationale": "race condition on startup"
+    },
+    {
+      "description": "result overflow possible under concurrency",
+      "target_dimension": "data consistency",
+      "score": 3,
+      "scoring_rationale": "max_results exceeded briefly"
+    }
+  ],
+  "must_fix": [
+    "AC-6: task timeout",
+    "AC-7: graceful shutdown wait",
+    "AC-12: closed queue rejects"
+  ],
+  "rounds_completed": 1,
+  "converged": true,
+  "dimensions_covered": [
+    {
+      "name": "concurrency",
+      "status": "covered"
+    },
+    {
+      "name": "functionality",
+      "status": "covered"
+    }
+  ]
+}

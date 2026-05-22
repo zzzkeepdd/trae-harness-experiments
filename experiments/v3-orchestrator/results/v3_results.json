@@ -1,0 +1,126 @@
+{
+  "pipeline": [
+    {
+      "task": "l1-1-string-utils",
+      "level": "L1",
+      "b_passed": 15,
+      "b_total": 15,
+      "b_rate": "100%"
+    },
+    {
+      "task": "l1-2-list-utils",
+      "level": "L1",
+      "b_passed": 15,
+      "b_total": 15,
+      "b_rate": "100%"
+    },
+    {
+      "task": "l2-1-cache",
+      "level": "L2",
+      "b_passed": 15,
+      "b_total": 15,
+      "b_rate": "100%"
+    },
+    {
+      "task": "l2-2-csv-processor",
+      "level": "L2",
+      "b_passed": 15,
+      "b_total": 15,
+      "b_rate": "100%"
+    },
+    {
+      "task": "l3-1-task-queue",
+      "level": "L3",
+      "b_passed": 15,
+      "b_total": 15,
+      "b_rate": "100%"
+    },
+    {
+      "task": "l3-2-session-manager",
+      "level": "L3",
+      "b_passed": 15,
+      "b_total": 15,
+      "b_rate": "100%"
+    }
+  ],
+  "tests": [
+    {
+      "task": "l1-1-string-utils",
+      "level": "L1",
+      "a_pass": 7,
+      "a_fail": 1,
+      "a_total": 8,
+      "a_rate": "88%",
+      "b_pass": 8,
+      "b_fail": 0,
+      "b_total": 8,
+      "b_rate": "100%",
+      "delta": "+12%"
+    },
+    {
+      "task": "l1-2-list-utils",
+      "level": "L1",
+      "a_pass": 7,
+      "a_fail": 0,
+      "a_total": 7,
+      "a_rate": "100%",
+      "b_pass": 7,
+      "b_fail": 0,
+      "b_total": 7,
+      "b_rate": "100%",
+      "delta": "+0%"
+    },
+    {
+      "task": "l2-1-cache",
+      "level": "L2",
+      "a_pass": 7,
+      "a_fail": 0,
+      "a_total": 7,
+      "a_rate": "100%",
+      "b_pass": 7,
+      "b_fail": 0,
+      "b_total": 7,
+      "b_rate": "100%",
+      "delta": "+0%"
+    },
+    {
+      "task": "l2-2-csv-processor",
+      "level": "L2",
+      "a_pass": 4,
+      "a_fail": 0,
+      "a_total": 4,
+      "a_rate": "100%",
+      "b_pass": 4,
+      "b_fail": 0,
+      "b_total": 4,
+      "b_rate": "100%",
+      "delta": "+0%"
+    },
+    {
+      "task": "l3-1-task-queue",
+      "level": "L3",
+      "a_pass": 3,
+      "a_fail": 1,
+      "a_total": 4,
+      "a_rate": "75%",
+      "b_pass": 4,
+      "b_fail": 0,
+      "b_total": 4,
+      "b_rate": "100%",
+      "delta": "+25%"
+    },
+    {
+      "task": "l3-2-session-manager",
+      "level": "L3",
+      "a_pass": 8,
+      "a_fail": 2,
+      "a_total": 10,
+      "a_rate": "80%",
+      "b_pass": 10,
+      "b_fail": 0,
+      "b_total": 10,
+      "b_rate": "100%",
+      "delta": "+20%"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+task,level,nh_auditor,h_auditor,nh_defects,h_defects,h_debate_attacks,h_debate_high_score
+l1-1-string-utils,L1-1,FAIL,PASS,0,0,6,4
+l1-2-list-utils,L1-2,FAIL,PASS,0,0,4,3
+l2-1-cache,L2-1,FAIL,PASS,0,0,3,3
+l2-2-csv-processor,L2-2,FAIL,PASS,0,0,3,3
+l3-1-task-queue,L3-1,FAIL,PASS,0,0,4,4
+l3-2-session-manager,L3-2,FAIL,PASS,1,1,4,4

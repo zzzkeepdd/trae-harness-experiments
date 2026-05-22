@@ -1,0 +1,14 @@
+{
+  "mode": "harness",
+  "code": "d:\\harness测试\\ab-exp\\results\\l3-2-session-manager\\harness\\l3-2-session-manager_harness_code.py",
+  "defect_count": 1,
+  "loc": 99,
+  "duration_sec": 0.0,
+  "debate_attack_count": 4,
+  "debate_high_score_count": 4,
+  "must_fix_count": 1,
+  "gate1_pass": true,
+  "gate2_pass": true,
+  "gate3_pass": true,
+  "audit_pass": true
+}

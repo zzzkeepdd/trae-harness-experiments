@@ -1,0 +1,40 @@
+{
+  "attacks": [
+    {
+      "description": "top_n sort direction semantics unclear with key_fn",
+      "target_dimension": "API design",
+      "score": 3
+    },
+    {
+      "description": "dedup fails on unhashable types silently",
+      "target_dimension": "boundary",
+      "score": 4
+    },
+    {
+      "description": "flatten only one level but no doc",
+      "target_dimension": "API design",
+      "score": 3
+    },
+    {
+      "description": "group_by order relies on Python 3.7+ dict insertion order",
+      "target_dimension": "compatibility",
+      "score": 2
+    }
+  ],
+  "must_fix": [
+    "dedup unhashable type handling",
+    "flatten depth documentation"
+  ],
+  "rounds_completed": 1,
+  "converged": true,
+  "dimensions_covered": [
+    {
+      "name": "API design",
+      "status": "covered"
+    },
+    {
+      "name": "boundary",
+      "status": "covered"
+    }
+  ]
+}
