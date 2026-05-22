@@ -2,62 +2,62 @@
   "project_name": "v6-file-upload",
   "pipeline_level": "L2",
   "current_phase": "TEST_GATE",
-  "created_at": "2026-05-23T03:33:40.264885",
+  "created_at": "2026-05-23T03:35:23.116112",
   "history": [
     {
       "phase": "INIT",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.360014"
+      "time": "2026-05-23T03:35:23.280031"
     },
     {
       "phase": "PHASE_0",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.406991"
+      "time": "2026-05-23T03:35:23.360951"
     },
     {
       "phase": "PHASE_1",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.455967"
+      "time": "2026-05-23T03:35:23.436898"
     },
     {
       "phase": "PHASE_2",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.502773"
+      "time": "2026-05-23T03:35:23.512243"
     },
     {
       "phase": "GATE_1",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.583165"
+      "time": "2026-05-23T03:35:23.642588"
     },
     {
       "phase": "PHASE_3",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.630479"
+      "time": "2026-05-23T03:35:23.725630"
     },
     {
       "phase": "PHASE_4",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.679024"
+      "time": "2026-05-23T03:35:23.802274"
     },
     {
       "phase": "GATE_2",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.759867"
+      "time": "2026-05-23T03:35:23.928045"
     },
     {
       "phase": "PHASE_5",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.806672"
+      "time": "2026-05-23T03:35:24.003765"
     },
     {
       "phase": "MODULE_2_STEP_1",
       "status": "PASS",
-      "time": "2026-05-23T03:33:40.855014"
+      "time": "2026-05-23T03:35:24.078106"
     },
     {
       "phase": "TEST_GATE",
       "status": "FAIL",
-      "time": "2026-05-23T03:33:40.932975",
+      "time": "2026-05-23T03:35:24.203218",
       "message": "FAIL — C27 测试即门: 1 个文件缺少测试\n  - src\\__init__.py 缺少测试文件 (期望 test___init__.py 或 __init___test.py)\n"
     }
   ],
