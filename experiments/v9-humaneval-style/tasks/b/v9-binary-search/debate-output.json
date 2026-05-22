@@ -1,0 +1,50 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L1",
+  "must_fix": [
+    "Handle edge cases"
+  ],
+  "attacks": [
+    {
+      "description": "boundary check",
+      "target_dimension": "boundary",
+      "score": 4,
+      "scoring_rationale": "edge"
+    },
+    {
+      "description": "Additional robustness analysis for L1",
+      "target_dimension": "robustness",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional concurrency analysis for L1",
+      "target_dimension": "concurrency",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional performance analysis for L1",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional boundary analysis for L1",
+      "target_dimension": "boundary",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}
