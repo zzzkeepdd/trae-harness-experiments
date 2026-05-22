@@ -1,0 +1,39 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L1",
+  "must_fix": [
+    "Unify None handling",
+    "Fix word boundary regex"
+  ],
+  "attacks": [
+    {
+      "description": "reverse/word_count None handling inconsistent across functions",
+      "target_dimension": "boundary",
+      "score": 4,
+      "scoring_rationale": "inconsistency leads to caller bugs"
+    },
+    {
+      "description": "is_palindrome regex strips non-ASCII characters",
+      "target_dimension": "boundary",
+      "score": 3,
+      "scoring_rationale": "i18n palindrome misdetection"
+    },
+    {
+      "description": "word_count regex splits hyphenated words incorrectly",
+      "target_dimension": "correctness",
+      "score": 3,
+      "scoring_rationale": "word counting semantics broken"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

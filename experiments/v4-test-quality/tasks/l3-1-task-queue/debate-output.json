@@ -1,0 +1,52 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "AC-6: timeout",
+    "AC-7: graceful shutdown",
+    "AC-12: closed queue"
+  ],
+  "attacks": [
+    {
+      "description": "stop() does not wait for workers to finish (AC-7)",
+      "target_dimension": "shutdown",
+      "score": 5,
+      "scoring_rationale": "AC-7 core requirement not met"
+    },
+    {
+      "description": "task.timeout not actually implemented (AC-6)",
+      "target_dimension": "timeout",
+      "score": 5,
+      "scoring_rationale": "AC-6 core missing"
+    },
+    {
+      "description": "submit race condition between start and _running flag",
+      "target_dimension": "concurrency",
+      "score": 4,
+      "scoring_rationale": "race condition bug"
+    },
+    {
+      "description": "get_result polling loop wastes CPU cycles",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "busy-wait antipattern"
+    },
+    {
+      "description": "AC-12 closed queue rejects new tasks not verified",
+      "target_dimension": "lifecycle",
+      "score": 4,
+      "scoring_rationale": "shutdown gap"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

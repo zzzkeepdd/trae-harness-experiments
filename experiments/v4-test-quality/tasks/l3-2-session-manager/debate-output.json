@@ -1,0 +1,52 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "JWT alg verification",
+    "logout token blacklisting",
+    "re-login invalidation"
+  ],
+  "attacks": [
+    {
+      "description": "JWT header alg not verified — none algorithm attack",
+      "target_dimension": "security",
+      "score": 5,
+      "scoring_rationale": "classic CVE"
+    },
+    {
+      "description": "logout does not invalidate tokens in blacklist",
+      "target_dimension": "session",
+      "score": 5,
+      "scoring_rationale": "AC-6 violation"
+    },
+    {
+      "description": "re-login does not blacklist old token (AC-9)",
+      "target_dimension": "session",
+      "score": 4,
+      "scoring_rationale": "multiple valid tokens"
+    },
+    {
+      "description": "password uses PBKDF2 instead of bcrypt per spec",
+      "target_dimension": "compliance",
+      "score": 3,
+      "scoring_rationale": "stronger but not per spec"
+    },
+    {
+      "description": "register allows empty password silently",
+      "target_dimension": "validation",
+      "score": 3,
+      "scoring_rationale": "weak credential gap"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

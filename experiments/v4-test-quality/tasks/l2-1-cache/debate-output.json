@@ -1,0 +1,45 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Lazy eviction of expired entries",
+    "Check expiry before LRU move_to_end"
+  ],
+  "attacks": [
+    {
+      "description": "TTL expired entries never cleaned up without access",
+      "target_dimension": "memory",
+      "score": 4,
+      "scoring_rationale": "memory leak risk"
+    },
+    {
+      "description": "expired keys pollute LRU ordering before move_to_end check",
+      "target_dimension": "TTL",
+      "score": 5,
+      "scoring_rationale": "AC-13 violation"
+    },
+    {
+      "description": "single coarse lock limits concurrent throughput",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "acceptable for L2"
+    },
+    {
+      "description": "LRU eviction uses OrderedDict iter order",
+      "target_dimension": "correctness",
+      "score": 2,
+      "scoring_rationale": "Python 3.7+ stable"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

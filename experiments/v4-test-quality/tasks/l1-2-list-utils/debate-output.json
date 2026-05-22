@@ -1,0 +1,39 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L1",
+  "must_fix": [
+    "Handle unhashable types",
+    "Document flatten depth"
+  ],
+  "attacks": [
+    {
+      "description": "dedup fails on unhashable types silently",
+      "target_dimension": "boundary",
+      "score": 4,
+      "scoring_rationale": "unhashable types crash dedup"
+    },
+    {
+      "description": "flatten only flattens one level without documentation",
+      "target_dimension": "API",
+      "score": 3,
+      "scoring_rationale": "users expect recursive"
+    },
+    {
+      "description": "top_n sort direction semantics unclear with key_fn",
+      "target_dimension": "API",
+      "score": 3,
+      "scoring_rationale": "reverse=True unexpected"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}
