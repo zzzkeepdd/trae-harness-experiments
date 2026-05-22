@@ -1,0 +1,45 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Lazy eviction",
+    "Expiry check"
+  ],
+  "attacks": [
+    {
+      "description": "TTL memory leak",
+      "target_dimension": "x",
+      "score": 4,
+      "scoring_rationale": ""
+    },
+    {
+      "description": "LRU pollution",
+      "target_dimension": "x",
+      "score": 5,
+      "scoring_rationale": ""
+    },
+    {
+      "description": "coarse lock",
+      "target_dimension": "x",
+      "score": 3,
+      "scoring_rationale": ""
+    },
+    {
+      "description": "keys() O(n)",
+      "target_dimension": "x",
+      "score": 3,
+      "scoring_rationale": ""
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

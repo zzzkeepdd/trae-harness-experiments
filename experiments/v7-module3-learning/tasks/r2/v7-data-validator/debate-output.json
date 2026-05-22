@@ -1,0 +1,45 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Nested schema",
+    "Cross-field"
+  ],
+  "attacks": [
+    {
+      "description": "EMAIL edge",
+      "target_dimension": "x",
+      "score": 3,
+      "scoring_rationale": ""
+    },
+    {
+      "description": "no nested",
+      "target_dimension": "x",
+      "score": 4,
+      "scoring_rationale": ""
+    },
+    {
+      "description": "no cross-field",
+      "target_dimension": "x",
+      "score": 3,
+      "scoring_rationale": ""
+    },
+    {
+      "description": "DATE format edge",
+      "target_dimension": "x",
+      "score": 3,
+      "scoring_rationale": ""
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}
