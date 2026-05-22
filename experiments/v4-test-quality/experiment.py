@@ -1229,6 +1229,7 @@ TASK_INFO = {
             {"description": "TTL expired entries never cleaned up without access", "target_dimension": "memory", "score": 4, "scoring_rationale": "memory leak risk"},
             {"description": "expired keys pollute LRU ordering before move_to_end check", "target_dimension": "TTL", "score": 5, "scoring_rationale": "AC-13 violation"},
             {"description": "single coarse lock limits concurrent throughput", "target_dimension": "performance", "score": 3, "scoring_rationale": "acceptable for L2"},
+            {"description": "keys() returns full list without pagination for large caches", "target_dimension": "scalability", "score": 3, "scoring_rationale": "O(n) memory on keys()"},
         ],
         "must_fix": ["Lazy eviction of expired entries", "Check expiry before LRU move_to_end"],
     },
@@ -1238,6 +1239,7 @@ TASK_INFO = {
             {"description": "filter_rows str(val) breaks numeric column filtering", "target_dimension": "correctness", "score": 4, "scoring_rationale": "numeric compare broken"},
             {"description": "read_csv catches Exception silently hiding all errors", "target_dimension": "error handling", "score": 3, "scoring_rationale": "data loss risk"},
             {"description": "aggregate agg_fn interface differs from task description", "target_dimension": "API", "score": 3, "scoring_rationale": "interface mismatch"},
+            {"description": "process_pipeline has no dry-run, no progress reporting, no partial-failure rollback", "target_dimension": "robustness", "score": 4, "scoring_rationale": "batch operation failures invisible"},
         ],
         "must_fix": ["Fix filter_rows type handling", "Improve error reporting"],
     },
@@ -1414,12 +1416,29 @@ def main():
     print(f"  总断言数: A={total_a_asserts} B={total_b_asserts} (B/A={total_b_asserts/max(total_a_asserts,1):.1f}x)")
 
     summary = {
-        "a": {"passed": total_a_asserts, "total": total_a_funcs},
-        "b": {"passed": total_b_asserts, "total": total_b_funcs},
-        "avg_a_coverage": avg_a_cov,
-        "avg_b_coverage": avg_b_cov,
-        "avg_a_mutation": avg_a_mut,
-        "avg_b_mutation": avg_b_mut,
+        "a": {"asserts": total_a_asserts, "functions": total_a_funcs, "density": round(total_a_asserts/max(total_a_funcs,1),2)},
+        "b": {"asserts": total_b_asserts, "functions": total_b_funcs, "density": round(total_b_asserts/max(total_b_funcs,1),2)},
+        "metrics": {
+            "avg_a_coverage": avg_a_cov,
+            "avg_b_coverage": avg_b_cov,
+            "avg_a_mutation": avg_a_mut,
+            "avg_b_mutation": avg_b_mut,
+        },
+        "tasks": [
+            {
+                "task": q["task"],
+                "level": q["level"],
+                "a_cov": q["a_coverage"],
+                "b_cov": q["b_coverage"],
+                "a_mut": q["a_mutation"],
+                "b_mut": q["b_mutation"],
+                "a_asserts": q["a_assertions"],
+                "b_asserts": q["b_assertions"],
+                "a_density": q["a_density"],
+                "b_density": q["b_density"],
+            }
+            for q in quality_results
+        ],
     }
     out_file = out_dir / "v4_results.json"
     out_file.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")

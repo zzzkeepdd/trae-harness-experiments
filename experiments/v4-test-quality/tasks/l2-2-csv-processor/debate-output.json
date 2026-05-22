@@ -24,6 +24,12 @@
       "target_dimension": "API",
       "score": 3,
       "scoring_rationale": "interface mismatch"
+    },
+    {
+      "description": "process_pipeline has no dry-run, no progress reporting, no partial-failure rollback",
+      "target_dimension": "robustness",
+      "score": 4,
+      "scoring_rationale": "batch operation failures invisible"
     }
   ],
   "dimensions_covered": [

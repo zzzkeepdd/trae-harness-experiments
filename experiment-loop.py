@@ -137,14 +137,15 @@ def parse_experiment_results(cfg: LoopConfig) -> dict:
     print(f"\n[步骤 2] 解析实验结果...")
     results_file = cfg.results_file
     if not results_file.exists():
-        print(f"  ⚠ 结果文件不存在，尝试从实验输出推断")
+        print(f"  ⚠ 结果文件不存在({results_file})，尝试从实验输出推断")
         return infer_results(cfg)
     try:
-        if results_file.suffix == ".json":
-            data = json.loads(results_file.read_text(encoding="utf-8"))
-        else:
-            data = parse_csv_or_text(results_file)
-        print(f"  ✓ 解析到 {len(data.get('tests', []))} 个测试结果")
+        data = json.loads(results_file.read_text(encoding="utf-8"))
+        metrics = data.get("metrics", {})
+        print(f"  ✓ coverage: A={metrics.get('avg_a_coverage',0):.0f}% → B={metrics.get('avg_b_coverage',0):.0f}%")
+        print(f"  ✓ assertions: A={data.get('a',{}).get('asserts',0)} → B={data.get('b',{}).get('asserts',0)}")
+        if "tasks" in data:
+            print(f"  ✓ {len(data['tasks'])} 个任务的明细数据")
         return data
     except Exception as e:
         print(f"  ⚠ 解析失败: {e}，使用推断模式")
@@ -165,34 +166,50 @@ def infer_results(cfg: LoopConfig) -> dict:
 
 def generate_report(cfg: LoopConfig, results: dict) -> str:
     print(f"\n[步骤 3] 生成实验报告...")
-    a = results.get("a", {})
-    b = results.get("b", {})
-    a_rate = a.get("passed", 0) / max(a.get("total", 1), 1) * 100
-    b_rate = b.get("passed", 0) / max(b.get("total", 1), 1) * 100
-    delta = b_rate - a_rate
+    metrics = results.get("metrics", {})
+    a_cov = metrics.get("avg_a_coverage", 0)
+    b_cov = metrics.get("avg_b_coverage", 0)
+    a_mut = metrics.get("avg_a_mutation", 0)
+    b_mut = metrics.get("avg_b_mutation", 0)
+    a_asserts = results.get("a", {}).get("asserts", 0)
+    b_asserts = results.get("b", {}).get("asserts", 0)
+    a_density = results.get("a", {}).get("density", 0)
+    b_density = results.get("b", {}).get("density", 0)
+    tasks = results.get("tasks", [])
+    exp_name = cfg.exp_name.upper().replace("-", " ")
 
-    report = f"""# {cfg.exp_name.upper()} 实验报告
+    report = f"""# {exp_name} 实验报告
 
 > 模型: deepseek-v4-pro | Harness: trae-harness v1.3 | 时间: {datetime.now().strftime('%Y-%m-%d %H:%M')}
 
 ## 实验设计
 
-A组: DSV4 Pro 直出代码 + 直出测试  
+A组: DSV4 Pro 直出代码 + 直出测试
 B组: DSV4 Pro + Harness 全流程
 
-## 测试结果
+两组使用同一套源代码(main.py)，仅测试文件不同。
 
-| 组别 | 通过 | 总数 | 通过率 |
-|------|:----:|:----:|:------:|
-| A组 (无Harness) | {a.get('passed', '?')} | {a.get('total', '?')} | {a_rate:.0f}% |
-| B组 (+Harness) | {b.get('passed', '?')} | {b.get('total', '?')} | {b_rate:.0f}% |
-| **差值 Δ** | | | **{delta:+.0f}%** |
+## 核心指标
 
+| 指标 | A 组 (无Harness) | B 组 (+Harness) | 提升 |
+|------|:---:|:---:|:---:|
+| 平均覆盖率 | {a_cov:.0f}% | {b_cov:.0f}% | {b_cov-a_cov:+.0f}% |
+| 断言数 | {a_asserts} | {b_asserts} | {b_asserts/max(a_asserts,1):.1f}x |
+| 断言密度 | {a_density:.2f} | {b_density:.2f} | {b_density/max(a_density,0.01):.1f}x |
+| 变异分 | {a_mut:.0f}% | {b_mut:.0f}% | {b_mut-a_mut:+.0f}% |
+"""
+    if tasks:
+        report += "\n## 逐任务明细\n\n"
+        report += "| 任务 | 级别 | A 覆盖 | B 覆盖 | A 断言 | B 断言 | A 密度 | B 密度 |\n"
+        report += "|------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|\n"
+        for t in tasks:
+            report += f"| {t['task']} | {t.get('level','?')} | {t.get('a_cov','?')} | {t.get('b_cov','?')} | {t.get('a_asserts','?')} | {t.get('b_asserts','?')} | {t.get('a_density','?')} | {t.get('b_density','?')} |\n"
+    report += f"""
 ## 结论
 
-Harness 将 DSV4 Pro 的代码质量从 {a_rate:.0f}% 提升到 {b_rate:.0f}% ({delta:+.0f}%)。
+Harness C27+C32 将 DSV4 Pro 测试覆盖率从 {a_cov:.0f}% 提升到 {b_cov:.0f}% ({b_cov-a_cov:+.0f}%)，断言密度提升 {b_density/max(a_density,0.01):.1f}x。
 
-{f"[原始数据模式] 来自手动输入" if results.get('mode') == 'manual' else ''}
+{f"[手动输入模式]" if results.get('mode') == 'manual' else ''}
 """
     report_file = cfg.exp_dir / "report.md"
     report_file.write_text(report, encoding="utf-8")
@@ -201,17 +218,9 @@ Harness 将 DSV4 Pro 的代码质量从 {a_rate:.0f}% 提升到 {b_rate:.0f}% ({
 
 
 def module3_retrospective(cfg: LoopConfig, results: dict) -> list[dict]:
-    """
-    Module 3 复盘 (Phase 1-5)
-    Phase 1: 复盘辩论
-    Phase 2: 裁决分类
-    Phase 3: 生成宪法草案
-    Phase 4: 用户确认 (在主循环中处理)
-    Phase 5: 合并 + 瘦身提醒
-    """
     print(f"\n[步骤 4] Module 3 复盘...")
     print("=" * 60)
-    print("Phase 1: 复盘辩论")
+    print("Phase 1: 复盘辩论 (多指标)")
     print("=" * 60)
 
     findings = analyze_results(results)
@@ -219,6 +228,8 @@ def module3_retrospective(cfg: LoopConfig, results: dict) -> list[dict]:
 
     for issue in findings["issues"]:
         print(f"  [{issue['severity']}] {issue['type']}: {issue['desc']}")
+    for win in findings["wins"]:
+        print(f"  [+] {win['type']}: {win['desc']}")
 
     print("\n" + "=" * 60)
     print("Phase 2: 复盘裁决")
@@ -227,9 +238,9 @@ def module3_retrospective(cfg: LoopConfig, results: dict) -> list[dict]:
     proposals = generate_proposals(findings)
     print(f"\n生成 {len(proposals)} 条宪法草案:")
     for p in proposals:
-        print(f"\n  [C{p['id']}] {p['title']}")
+        print(f"\n  [C{p['id']:02d}] {p['title']}")
         print(f"  适用: {p['applies']}")
-        print(f"  内容: {p['content'][:80]}...")
+        print(f"  内容: {p['content'][:100]}")
 
     print("\n" + "=" * 60)
     print("Phase 3: 宪法草案已生成")
@@ -240,65 +251,107 @@ def module3_retrospective(cfg: LoopConfig, results: dict) -> list[dict]:
 
 
 def analyze_results(results: dict) -> dict:
-    a = results.get("a", {})
-    b = results.get("b", {})
-    a_pass = a.get("passed", 0)
-    a_total = a.get("total", 0)
-    b_pass = b.get("passed", 0)
-    b_total = b.get("total", 0)
-    failed = a_total - a_pass
+    """多指标复盘：从实际实验数据中提取问题与亮点"""
+    metrics = results.get("metrics", {})
+    tasks = results.get("tasks", [])
+    a_asserts = results.get("a", {}).get("asserts", 0)
+    b_asserts = results.get("b", {}).get("asserts", 0)
+    a_cov = metrics.get("avg_a_coverage", 0)
+    b_cov = metrics.get("avg_b_coverage", 0)
+    a_mut = metrics.get("avg_a_mutation", 0)
+    b_mut = metrics.get("avg_b_mutation", 0)
+    delta_cov = b_cov - a_cov
+    delta_mut = b_mut - a_mut
 
     issues = []
     wins = []
 
-    a_rate = a_pass / max(a_total, 1) * 100
-    b_rate = b_pass / max(b_total, 1) * 100
-    delta = b_rate - a_rate
+    if a_asserts > 0:
+        ratio = b_asserts / a_asserts
+        if ratio >= 3:
+            issues.append({"severity": "HIGH", "type": "断言密度",
+                "desc": f"C32 有效断言检查将断言数从 {a_asserts} 提升到 {b_asserts} ({ratio:.1f}x)，模型自然水平严重不足",
+                "evidence": {"a_asserts": a_asserts, "b_asserts": b_asserts, "ratio": ratio}})
+            wins.append({"type": "规则验证", "desc": f"C32 测试闸门质量下限有效，断言数 {ratio:.1f}x"})
+        elif ratio >= 1.5:
+            issues.append({"severity": "MEDIUM", "type": "断言密度",
+                "desc": f"模型自然水平断言密度偏低，Harness 提升 {ratio:.1f}x",
+                "evidence": {"a_asserts": a_asserts, "b_asserts": b_asserts, "ratio": ratio}})
+            wins.append({"type": "规则验证", "desc": f"C32 提升断言密度 {ratio:.1f}x"})
+        else:
+            wins.append({"type": "边际提升", "desc": f"断言数提升仅 {ratio:.1f}x，模型自然水平已不错"})
 
-    if failed > 0:
-        issues.append({
-            "severity": "HIGH",
-            "type": "代码质量",
-            "desc": f"A组有 {failed} 个测试失败，B组全部通过 (+{delta:.0f}%)"
-        })
+    if delta_cov >= 15:
+        issues.append({"severity": "HIGH", "type": "覆盖率",
+            "desc": f"A 组覆盖率 {a_cov:.0f}% vs B 组 {b_cov:.0f}% ({delta_cov:+.0f}%)，C27 测试闸门大幅提升覆盖",
+            "evidence": {"a_cov": a_cov, "b_cov": b_cov, "delta": delta_cov}})
+        wins.append({"type": "规则验证", "desc": f"C27 测试闸门覆盖率提升 {delta_cov:+.0f}%"})
+    elif delta_cov >= 5:
+        issues.append({"severity": "MEDIUM", "type": "覆盖率",
+            "desc": f"Harness 覆盖率提升 {delta_cov:+.0f}%，C27 有效但非显著",
+            "evidence": {"a_cov": a_cov, "b_cov": b_cov, "delta": delta_cov}})
+
+    if delta_mut <= 5:
+        issues.append({"severity": "HIGH", "type": "变异测试",
+            "desc": f"变异分均接近 0% (A={a_mut:.0f}% B={b_mut:.0f}%)，手动变异算子不足以检测测试质量，需改进 testing 工具链",
+            "evidence": {"a_mut": a_mut, "b_mut": b_mut}})
+
+    for t in tasks:
+        a_cov_t = float(str(t.get("a_cov", "0%")).rstrip("%"))
+        b_cov_t = float(str(t.get("b_cov", "0%")).rstrip("%"))
+        if a_cov_t < 50 and b_cov_t > 70:
+            wins.append({"type": "个案分析", "desc": f"{t['task']}: Harness 将覆盖率从 {a_cov_t:.0f}% 拉到 {b_cov_t:.0f}%"})
 
     if results.get("mode") == "manual":
-        issues.append({
-            "severity": "INFO",
-            "type": "数据采集",
-            "desc": "结果来自手动输入，建议后续自动化"
-        })
+        issues.append({"severity": "INFO", "type": "数据采集", "desc": "结果来自手动输入，建议后续自动化"})
 
-    if delta < 5:
-        wins.append({"type": "边际效果", "desc": "两组差异较小 (<5%)"})
-    else:
-        wins.append({"type": "显著提升", "desc": f"Harness 带来 {delta:.0f}% 质量提升"})
-
-    return {"issues": issues, "wins": wins, "delta": delta}
+    return {"issues": issues, "wins": wins, "delta_cov": delta_cov, "delta_mut": delta_mut}
 
 
 def generate_proposals(findings: dict) -> list[dict]:
+    """从实验发现生成具体可执行的宪法草案"""
     proposals = []
-    proposal_id = get_next_proposal_id()
+    pid = get_next_proposal_id()
 
     for issue in findings["issues"]:
-        if issue["severity"] == "HIGH" and "代码质量" in issue["type"]:
+        if issue["type"] == "断言密度" and issue["severity"] == "HIGH":
             proposals.append({
-                "id": proposal_id,
-                "title": issue["desc"],
-                "applies": "全体",
-                "group": "verification-integrity",
-                "content": f"增强 {issue['type']} 检查: {issue['desc']}",
+                "id": pid, "title": f"强化 C32 断言下限: {issue['desc'][:50]}",
+                "applies": "Trae统筹", "group": "test-gating",
+                "content": f"C32 强化: 有效断言下限从 ≥2 提高到 ≥3 (模型单独产出)，或针对 L3 任务要求 ≥5。实验证据: A组={issue['evidence']['a_asserts']}条 B组={issue['evidence']['b_asserts']}条 (×{issue['evidence']['ratio']:.1f})",
             })
-            proposal_id += 1
+            pid += 1
+
+        if issue["type"] == "覆盖率" and issue["severity"] == "HIGH":
+            c27_old = "C27 测试闸门检查测试文件存在"
+            c27_new = f"C27 强化: 测试闸门不仅检查文件存在，还要求测试文件引用源文件所有 public 函数 (覆盖率 ≥70%)。实验: A 组 {issue['evidence']['a_cov']:.0f}% 覆盖"
+            proposals.append({
+                "id": pid, "title": f"强化 C27 覆盖率门槛",
+                "applies": "Trae统筹", "group": "test-gating",
+                "content": c27_new,
+            })
+            pid += 1
+
+        if issue["type"] == "变异测试":
+            proposals.append({
+                "id": pid, "title": "引入 mutmut 全量变异测试",
+                "applies": "全体", "group": "verification-integrity",
+                "content": "新增规则: 测试质量复盘必须包含 mutmut 变异测试 (≥100 个变异点)，变异分 < 30% 时拒绝通过测试闸门。当前手动变异精度不足。",
+            })
+            pid += 1
+
+        if issue["type"] == "断言密度" and issue["severity"] == "MEDIUM":
+            proposals.append({
+                "id": pid, "title": f"L1/L2 断言密度基线建议",
+                "applies": "func-qa", "group": "qa-effectiveness",
+                "content": f"func-qa 检查断言密度: L1≥1.5 L2≥2.0 L3≥3.0。当前 A 组自然水平密度仅 {issue['evidence']['b_asserts']/max(issue['evidence']['a_asserts'],1):.1f}x 于 B 组。",
+            })
+            pid += 1
 
     if not proposals:
         proposals.append({
-            "id": proposal_id,
-            "title": "持续改进",
-            "applies": "全体",
-            "group": "verification-integrity",
-            "content": "实验未发现新的规则空白，建议继续扩展测试集",
+            "id": pid, "title": "持续改进", "applies": "全体", "group": "verification-integrity",
+            "content": f"实验 {findings.get('delta_cov',0):+.0f}% 覆盖率提升无显著弱项，建议继续扩展测试集和实验类型",
         })
 
     return proposals
@@ -375,27 +428,22 @@ def merge_proposals(proposals: list[dict]):
     if version_match:
         major, minor, patch = int(version_match.group(1)), int(version_match.group(2)), int(version_match.group(3))
         new_version = f"v{major}.{minor}.{patch+1}"
-        new_record = f"- {new_version}: 新增 C{proposals[0]['id']:02d}" + (
-            f"-C{proposals[-1]['id']:02d}" if len(proposals) > 1 else ""
-        ) + f" — {datetime.now().strftime('%Y-%m-%d')} (experiment-loop)"
     else:
         new_version = "v1.4.0"
-        new_record = f"- {new_version}: 新增 C{proposals[0]['id']:02d} (experiment-loop)"
 
     new_rules = "\n".join(
         f"| C{p['id']:02d} | {p['content'][:100]} | {p['applies']} | {p['group']} |"
         for p in proposals
     )
 
+    new_record = f"- {new_version}: 新增 C{proposals[0]['id']:02d}" + (
+        f"-C{proposals[-1]['id']:02d}" if len(proposals) > 1 else ""
+    ) + f" — {datetime.now().strftime('%Y-%m-%d')} (experiment-loop)"
+
     if "## 修订记录" in text:
-        text = text.replace("## 修订记录", f"{new_rules}\n\n## 修订记录")
-        rev_match = re.search(r"(## 修订记录\n\n- .+?:\s)", text)
-        if rev_match:
-            text = text.replace(rev_match.group(1), rev_match.group(1) + f" {new_record}\n")
-        else:
-            rev_match = re.search(r"(## 修订记录\n)", text)
-            if rev_match:
-                text = text.replace(rev_match.group(1), rev_match.group(1) + f"\n{new_record}\n")
+        before, after = text.split("## 修订记录", 1)
+        text = before + new_rules + "\n\n## 修订记录" + after
+        text = text.rstrip() + "\n" + new_record + "\n"
     else:
         text += f"\n{new_rules}\n\n## 修订记录\n{new_record}\n"
 
@@ -410,8 +458,7 @@ def merge_proposals(proposals: list[dict]):
     )
     print("  ✓ proposals.md 已清空")
 
-    count = len(list(HARNESS_REPO.glob("references/constitution/full-constitution.md")))
-    rule_lines = [l for l in text.split("\n") if l.startswith("| C")]
+    rule_lines = [l for l in text.split("\n") if l.strip().startswith("| C")]
     rule_count = len(rule_lines)
     if rule_count > 25:
         print(f"  ⚠ Phase 5: 规则数 {rule_count} > 25 条，建议瘦身")

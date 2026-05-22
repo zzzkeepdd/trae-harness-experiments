@@ -24,6 +24,12 @@
       "target_dimension": "performance",
       "score": 3,
       "scoring_rationale": "acceptable for L2"
+    },
+    {
+      "description": "keys() returns full list without pagination for large caches",
+      "target_dimension": "scalability",
+      "score": 3,
+      "scoring_rationale": "O(n) memory on keys()"
     }
   ],
   "dimensions_covered": [

@@ -1,14 +1,92 @@
 {
   "a": {
-    "passed": 28,
-    "total": 39
+    "asserts": 28,
+    "functions": 39,
+    "density": 0.72
   },
   "b": {
-    "passed": 124,
-    "total": 39
+    "asserts": 124,
+    "functions": 39,
+    "density": 3.18
   },
-  "avg_a_coverage": 62.0,
-  "avg_b_coverage": 85.0,
-  "avg_a_mutation": 0.0,
-  "avg_b_mutation": 0.0
+  "metrics": {
+    "avg_a_coverage": 62.0,
+    "avg_b_coverage": 85.0,
+    "avg_a_mutation": 0.0,
+    "avg_b_mutation": 0.0
+  },
+  "tasks": [
+    {
+      "task": "l1-1-string-utils",
+      "level": "L1",
+      "a_cov": "100%",
+      "b_cov": "100%",
+      "a_mut": "0%",
+      "b_mut": "0%",
+      "a_asserts": 7,
+      "b_asserts": 34,
+      "a_density": 1.75,
+      "b_density": 8.5
+    },
+    {
+      "task": "l1-2-list-utils",
+      "level": "L1",
+      "a_cov": "100%",
+      "b_cov": "100%",
+      "a_mut": "0%",
+      "b_mut": "0%",
+      "a_asserts": 5,
+      "b_asserts": 24,
+      "a_density": 1.25,
+      "b_density": 6.0
+    },
+    {
+      "task": "l2-1-cache",
+      "level": "L2",
+      "a_cov": "25%",
+      "b_cov": "75%",
+      "a_mut": "0%",
+      "b_mut": "0%",
+      "a_asserts": 6,
+      "b_asserts": 22,
+      "a_density": 0.75,
+      "b_density": 2.75
+    },
+    {
+      "task": "l2-2-csv-processor",
+      "level": "L2",
+      "a_cov": "40%",
+      "b_cov": "100%",
+      "a_mut": "0%",
+      "b_mut": "0%",
+      "a_asserts": 3,
+      "b_asserts": 18,
+      "a_density": 0.6,
+      "b_density": 3.6
+    },
+    {
+      "task": "l3-1-task-queue",
+      "level": "L3",
+      "a_cov": "71%",
+      "b_cov": "71%",
+      "a_mut": "0%",
+      "b_mut": "0%",
+      "a_asserts": 2,
+      "b_asserts": 7,
+      "a_density": 0.29,
+      "b_density": 1.0
+    },
+    {
+      "task": "l3-2-session-manager",
+      "level": "L3",
+      "a_cov": "36%",
+      "b_cov": "64%",
+      "a_mut": "0%",
+      "b_mut": "0%",
+      "a_asserts": 5,
+      "b_asserts": 19,
+      "a_density": 0.45,
+      "b_density": 1.73
+    }
+  ]
 }
