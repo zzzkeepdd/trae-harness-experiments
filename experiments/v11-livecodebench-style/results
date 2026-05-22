@@ -1,0 +1,17 @@
+{
+  "a": {
+    "pass_rate": 0.591,
+    "passed": 26,
+    "total": 44
+  },
+  "b": {
+    "pass_rate": 0.591,
+    "passed": 26,
+    "total": 44
+  },
+  "metrics": {
+    "delta": 0.0,
+    "a_pct": 59.1,
+    "b_pct": 59.1
+  }
+}

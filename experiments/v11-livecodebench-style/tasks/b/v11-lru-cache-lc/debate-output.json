@@ -1,0 +1,50 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "Optimize algorithm"
+  ],
+  "attacks": [
+    {
+      "description": "algorithm complexity check",
+      "target_dimension": "performance",
+      "score": 5,
+      "scoring_rationale": "core"
+    },
+    {
+      "description": "Additional robustness analysis for L3",
+      "target_dimension": "robustness",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional concurrency analysis for L3",
+      "target_dimension": "concurrency",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional performance analysis for L3",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional boundary analysis for L3",
+      "target_dimension": "boundary",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

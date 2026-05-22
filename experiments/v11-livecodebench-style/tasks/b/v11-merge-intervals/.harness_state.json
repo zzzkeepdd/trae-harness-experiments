@@ -1,0 +1,35 @@
+{
+  "project_name": "v11-merge-intervals",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-23T03:38:37.525494",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-23T03:38:37.672294"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-23T03:38:37.747905"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-23T03:38:37.819850"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-23T03:38:37.894079"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-23T03:38:38.022966",
+      "message": "FAIL — 1 项不合规：\n  - attacks[0] scoring_rationale 过短或缺失\n"
+    }
+  ],
+  "notes": ""
+}
