@@ -1,16 +1,16 @@
 {
   "a": {
-    "runtime_1k_ms": 10.76,
+    "runtime_1k_ms": 10.86,
     "complexity": "O(2^n)",
     "avg_runtime_100ms": 0.85
   },
   "b": {
-    "runtime_1k_ms": 2.63,
+    "runtime_1k_ms": 2.64,
     "complexity": "O(n)",
-    "avg_runtime_100ms": 1.17
+    "avg_runtime_100ms": 1.22
   },
   "metrics": {
-    "avg_speedup": 4.09,
+    "avg_speedup": 4.12,
     "complexity_improved": 4
   },
   "tasks": [
@@ -28,23 +28,23 @@
     },
     {
       "task": "v8-sort-dedup",
-      "a_n100_ms": 4.29,
-      "a_n1000_ms": 38.66,
+      "a_n100_ms": 4.2,
+      "a_n1000_ms": 39.15,
       "a_complexity": "O(n²)",
-      "b_n100_ms": 4.47,
-      "b_n1000_ms": 4.25,
+      "b_n100_ms": 4.74,
+      "b_n1000_ms": 4.32,
       "b_complexity": "O(n log n)",
-      "speedup": 9.1,
+      "speedup": 9.06,
       "a_orch_rate": 90.9,
       "b_orch_rate": 90.9
     },
     {
       "task": "v8-matrix-multiply",
-      "a_n100_ms": 0.09,
-      "a_n1000_ms": 2.12,
+      "a_n100_ms": 0.17,
+      "a_n1000_ms": 2.06,
       "a_complexity": "O(n³)",
-      "b_n100_ms": 0.15,
-      "b_n1000_ms": 1.57,
+      "b_n100_ms": 0.09,
+      "b_n1000_ms": 1.53,
       "b_complexity": "O(n².8)",
       "speedup": 1.35,
       "a_orch_rate": 90.9,
@@ -53,12 +53,12 @@
     {
       "task": "v8-text-search",
       "a_n100_ms": 0.04,
-      "a_n1000_ms": 3.28,
+      "a_n1000_ms": 3.21,
       "a_complexity": "O(n*m)",
       "b_n100_ms": 0.05,
-      "b_n1000_ms": 4.65,
+      "b_n1000_ms": 4.63,
       "b_complexity": "O(n+m)",
-      "speedup": 0.71,
+      "speedup": 0.69,
       "a_orch_rate": 90.9,
       "b_orch_rate": 90.9
     }
