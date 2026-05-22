@@ -1,0 +1,65 @@
+{
+  "project_name": "v8-sort-dedup",
+  "pipeline_level": "L2",
+  "current_phase": "TEST_GATE",
+  "created_at": "2026-05-23T05:03:40.790578",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:40.883090"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:40.930960"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:40.980074"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:41.026279"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:41.106657"
+    },
+    {
+      "phase": "PHASE_3",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:41.154559"
+    },
+    {
+      "phase": "PHASE_4",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:41.200141"
+    },
+    {
+      "phase": "GATE_2",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:41.279322"
+    },
+    {
+      "phase": "PHASE_5",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:41.326580"
+    },
+    {
+      "phase": "MODULE_2_STEP_1",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:41.375252"
+    },
+    {
+      "phase": "TEST_GATE",
+      "status": "FAIL",
+      "time": "2026-05-23T05:03:41.453427",
+      "message": "FAIL — C27 测试即门: 1 个文件缺少测试\n  - src\\__init__.py 缺少测试文件 (期望 test___init__.py 或 __init___test.py)\n"
+    }
+  ],
+  "notes": ""
+}

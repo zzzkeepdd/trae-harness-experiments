@@ -1,0 +1,66 @@
+{
+  "a": {
+    "runtime_1k_ms": 9.99,
+    "complexity": "O(2^n)",
+    "avg_runtime_100ms": 0.46
+  },
+  "b": {
+    "runtime_1k_ms": 2.17,
+    "complexity": "O(n)",
+    "avg_runtime_100ms": 0.64
+  },
+  "metrics": {
+    "avg_speedup": 4.61,
+    "complexity_improved": 4
+  },
+  "tasks": [
+    {
+      "task": "v8-fibonacci",
+      "a_n100_ms": -1,
+      "a_n1000_ms": -1,
+      "a_complexity": "O(2^n)",
+      "b_n100_ms": 0.01,
+      "b_n1000_ms": 0.06,
+      "b_complexity": "O(n)",
+      "speedup": -16.67,
+      "a_orch_rate": 90.9,
+      "b_orch_rate": 90.9
+    },
+    {
+      "task": "v8-sort-dedup",
+      "a_n100_ms": 2.72,
+      "a_n1000_ms": 35.25,
+      "a_complexity": "O(n²)",
+      "b_n100_ms": 2.43,
+      "b_n1000_ms": 2.57,
+      "b_complexity": "O(n log n)",
+      "speedup": 13.72,
+      "a_orch_rate": 90.9,
+      "b_orch_rate": 90.9
+    },
+    {
+      "task": "v8-matrix-multiply",
+      "a_n100_ms": 0.09,
+      "a_n1000_ms": 2.17,
+      "a_complexity": "O(n³)",
+      "b_n100_ms": 0.08,
+      "b_n1000_ms": 1.57,
+      "b_complexity": "O(n².8)",
+      "speedup": 1.38,
+      "a_orch_rate": 90.9,
+      "b_orch_rate": 90.9
+    },
+    {
+      "task": "v8-text-search",
+      "a_n100_ms": 0.04,
+      "a_n1000_ms": 3.53,
+      "a_complexity": "O(n*m)",
+      "b_n100_ms": 0.05,
+      "b_n1000_ms": 4.46,
+      "b_complexity": "O(n+m)",
+      "speedup": 0.79,
+      "a_orch_rate": 90.9,
+      "b_orch_rate": 90.9
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Optimize complexity"
+  ],
+  "attacks": [
+    {
+      "description": "Complexity check for v8-text-search",
+      "target_dimension": "performance",
+      "score": 4,
+      "scoring_rationale": "algo complexity"
+    },
+    {
+      "description": "Additional robustness analysis for L2",
+      "target_dimension": "robustness",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional concurrency analysis for L2",
+      "target_dimension": "concurrency",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    },
+    {
+      "description": "Additional performance analysis for L2",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

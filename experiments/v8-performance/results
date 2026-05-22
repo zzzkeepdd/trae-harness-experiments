@@ -1,0 +1,16 @@
+{
+  "a": {
+    "runtime_1k_ms": 9.99,
+    "complexity": "O(2^n)",
+    "avg_runtime_100ms": 0.46
+  },
+  "b": {
+    "runtime_1k_ms": 2.17,
+    "complexity": "O(n)",
+    "avg_runtime_100ms": 0.64
+  },
+  "metrics": {
+    "avg_speedup": 4.61,
+    "complexity_improved": 4
+  }
+}

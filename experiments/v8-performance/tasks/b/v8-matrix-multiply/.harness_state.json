@@ -1,0 +1,65 @@
+{
+  "project_name": "v8-matrix-multiply",
+  "pipeline_level": "L2",
+  "current_phase": "TEST_GATE",
+  "created_at": "2026-05-23T05:03:42.342102",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.438390"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.484914"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.531525"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.577822"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.658297"
+    },
+    {
+      "phase": "PHASE_3",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.705694"
+    },
+    {
+      "phase": "PHASE_4",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.752542"
+    },
+    {
+      "phase": "GATE_2",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.828983"
+    },
+    {
+      "phase": "PHASE_5",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.876332"
+    },
+    {
+      "phase": "MODULE_2_STEP_1",
+      "status": "PASS",
+      "time": "2026-05-23T05:03:42.925078"
+    },
+    {
+      "phase": "TEST_GATE",
+      "status": "FAIL",
+      "time": "2026-05-23T05:03:43.004369",
+      "message": "FAIL — C27 测试即门: 1 个文件缺少测试\n  - src\\__init__.py 缺少测试文件 (期望 test___init__.py 或 __init___test.py)\n"
+    }
+  ],
+  "notes": ""
+}
