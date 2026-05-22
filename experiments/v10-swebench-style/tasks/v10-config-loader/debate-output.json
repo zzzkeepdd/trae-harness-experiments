@@ -1,0 +1,46 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Path normalization",
+    "default parameter on get",
+    "Fix closure in resolve_variables"
+  ],
+  "attacks": [
+    {
+      "description": "load_json accepts relative paths, de-duped by raw string not normpath",
+      "target_dimension": "correctness",
+      "score": 4,
+      "scoring_rationale": "same file loaded twice via different paths"
+    },
+    {
+      "description": "get/get_int raise KeyError with no default support",
+      "target_dimension": "API",
+      "score": 4,
+      "scoring_rationale": "caller needs try/except everywhere"
+    },
+    {
+      "description": "resolve_variables replacer closure captures wrong ref in loop",
+      "target_dimension": "correctness",
+      "score": 5,
+      "scoring_rationale": "loop closure bug produces wrong variable resolution"
+    },
+    {
+      "description": "Additional performance analysis for L2",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

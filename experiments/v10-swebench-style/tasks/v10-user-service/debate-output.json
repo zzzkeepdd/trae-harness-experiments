@@ -1,0 +1,46 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Add lock to register",
+    "Safe dict access with .get()",
+    "hmac.compare_digest for password"
+  ],
+  "attacks": [
+    {
+      "description": "register has race condition — username check + insert not atomic",
+      "target_dimension": "concurrency",
+      "score": 5,
+      "scoring_rationale": "race condition allows duplicate users"
+    },
+    {
+      "description": "get_user_profile / update_email / delete_user access _users[uid] without key check",
+      "target_dimension": "null_pointer",
+      "score": 5,
+      "scoring_rationale": "KeyError crash on bad session_id"
+    },
+    {
+      "description": "password comparison uses != instead of hmac.compare_digest",
+      "target_dimension": "security",
+      "score": 4,
+      "scoring_rationale": "timing attack vector"
+    },
+    {
+      "description": "get_user_profile mutates shared profile dict without copy",
+      "target_dimension": "data_integrity",
+      "score": 3,
+      "scoring_rationale": "callers can corrupt internal state"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

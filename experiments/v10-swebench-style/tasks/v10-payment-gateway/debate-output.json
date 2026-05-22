@@ -1,0 +1,46 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "Use Decimal instead of float",
+    "Fix signature payload to use string",
+    "Fix idempotency key mapping"
+  ],
+  "attacks": [
+    {
+      "description": "balance uses float causing integer overflow / precision loss at large values",
+      "target_dimension": "correctness",
+      "score": 5,
+      "scoring_rationale": "float precision breaks at 2^53 boundary"
+    },
+    {
+      "description": "transfer signature contains float amount making verification fragile",
+      "target_dimension": "security",
+      "score": 5,
+      "scoring_rationale": "float serialization varies across platforms"
+    },
+    {
+      "description": "idempotency keys stored in set with no transaction lookup mapping",
+      "target_dimension": "correctness",
+      "score": 4,
+      "scoring_rationale": "idempotent replay returns wrong transaction sometimes"
+    },
+    {
+      "description": "Additional performance analysis for L2",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

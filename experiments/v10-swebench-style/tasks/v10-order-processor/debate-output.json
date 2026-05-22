@@ -1,0 +1,46 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Use Decimal for money",
+    "Validate inputs",
+    "Rollback on failure"
+  ],
+  "attacks": [
+    {
+      "description": "total uses float causing rounding errors (0.1 + 0.2 != 0.3)",
+      "target_dimension": "correctness",
+      "score": 5,
+      "scoring_rationale": "financial calculation precision bug"
+    },
+    {
+      "description": "no input validation on inventory price/quantity types",
+      "target_dimension": "validation",
+      "score": 4,
+      "scoring_rationale": "accepts string price, negative qty"
+    },
+    {
+      "description": "process_order has no rollback on failure after partial inventory deduction",
+      "target_dimension": "atomicity",
+      "score": 4,
+      "scoring_rationale": "data corruption on order error"
+    },
+    {
+      "description": "Additional performance analysis for L2",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

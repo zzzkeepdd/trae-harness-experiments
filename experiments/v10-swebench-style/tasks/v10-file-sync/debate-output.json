@@ -1,0 +1,46 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "Path traversal prevention",
+    "Switch to SHA256",
+    "Atomic manifest writes"
+  ],
+  "attacks": [
+    {
+      "description": "path traversal via ../ allows writing outside base_dir",
+      "target_dimension": "security",
+      "score": 5,
+      "scoring_rationale": "arbitrary file write CWE-22"
+    },
+    {
+      "description": "checksum uses MD5 allowing collision attacks",
+      "target_dimension": "integrity",
+      "score": 5,
+      "scoring_rationale": "MD5 collisions permit malicious file injection"
+    },
+    {
+      "description": "manifest write is not atomic, crashes leave corrupt manifest",
+      "target_dimension": "robustness",
+      "score": 4,
+      "scoring_rationale": "data loss on crash during save"
+    },
+    {
+      "description": "Additional performance analysis for L2",
+      "target_dimension": "performance",
+      "score": 3,
+      "scoring_rationale": "threshold padding"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

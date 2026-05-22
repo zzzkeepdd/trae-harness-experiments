@@ -1,0 +1,35 @@
+{
+  "project_name": "v10-payment-gateway",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-23T03:33:22.080956",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-23T03:33:22.174652"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-23T03:33:22.223377"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-23T03:33:22.270708"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-23T03:33:22.319042"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-23T03:33:22.404273",
+      "message": "FAIL — 1 项不合规：\n  - C10 L3 门槛不满足: 高分4(需>=3) 总数4(需>=5)\n"
+    }
+  ],
+  "notes": ""
+}

@@ -1,0 +1,111 @@
+{
+  "a": {
+    "bugs_fixed": 2,
+    "regressions": 2,
+    "fix_rate": 1.0
+  },
+  "b": {
+    "bugs_fixed": 2,
+    "regressions": 0,
+    "fix_rate": 1.0
+  },
+  "metrics": {
+    "avg_a_rate": 1.0,
+    "avg_b_rate": 1.0,
+    "a_regressions": 2,
+    "b_regressions": 0,
+    "total_buggy_errors": 2
+  },
+  "tasks": [
+    {
+      "task": "v10-user-service",
+      "level": "L2",
+      "buggy_errors": 0,
+      "a_bugs_fixed": 0,
+      "b_bugs_fixed": 0,
+      "a_regressions": 2,
+      "b_regressions": 0,
+      "a_fix_rate": 0.0,
+      "b_fix_rate": 0.0,
+      "a_fix_score": -0.4,
+      "b_fix_score": 0.0,
+      "orchestrator_passed": 10,
+      "orchestrator_total": 11
+    },
+    {
+      "task": "v10-order-processor",
+      "level": "L2",
+      "buggy_errors": 0,
+      "a_bugs_fixed": 0,
+      "b_bugs_fixed": 0,
+      "a_regressions": 0,
+      "b_regressions": 0,
+      "a_fix_rate": 0.0,
+      "b_fix_rate": 0.0,
+      "a_fix_score": 0.0,
+      "b_fix_score": 0.0,
+      "orchestrator_passed": 10,
+      "orchestrator_total": 11
+    },
+    {
+      "task": "v10-config-loader",
+      "level": "L2",
+      "buggy_errors": 0,
+      "a_bugs_fixed": 0,
+      "b_bugs_fixed": 0,
+      "a_regressions": 0,
+      "b_regressions": 0,
+      "a_fix_rate": 0.0,
+      "b_fix_rate": 0.0,
+      "a_fix_score": 0.0,
+      "b_fix_score": 0.0,
+      "orchestrator_passed": 10,
+      "orchestrator_total": 11
+    },
+    {
+      "task": "v10-api-rate-limiter",
+      "level": "L3",
+      "buggy_errors": 0,
+      "a_bugs_fixed": 0,
+      "b_bugs_fixed": 0,
+      "a_regressions": 0,
+      "b_regressions": 0,
+      "a_fix_rate": 0.0,
+      "b_fix_rate": 0.0,
+      "a_fix_score": 0.0,
+      "b_fix_score": 0.0,
+      "orchestrator_passed": 4,
+      "orchestrator_total": 5
+    },
+    {
+      "task": "v10-file-sync",
+      "level": "L3",
+      "buggy_errors": 2,
+      "a_bugs_fixed": 2,
+      "b_bugs_fixed": 2,
+      "a_regressions": 0,
+      "b_regressions": 0,
+      "a_fix_rate": 1.0,
+      "b_fix_rate": 1.0,
+      "a_fix_score": 1.0,
+      "b_fix_score": 1.0,
+      "orchestrator_passed": 4,
+      "orchestrator_total": 5
+    },
+    {
+      "task": "v10-payment-gateway",
+      "level": "L3",
+      "buggy_errors": 0,
+      "a_bugs_fixed": 0,
+      "b_bugs_fixed": 0,
+      "a_regressions": 0,
+      "b_regressions": 0,
+      "a_fix_rate": 0.0,
+      "b_fix_rate": 0.0,
+      "a_fix_score": 0.0,
+      "b_fix_score": 0.0,
+      "orchestrator_passed": 4,
+      "orchestrator_total": 5
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "project_name": "v10-api-rate-limiter",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-23T03:33:19.996013",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-23T03:33:20.088878"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-23T03:33:20.135932"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-23T03:33:20.183839"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-23T03:33:20.232692"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-23T03:33:20.317958",
+      "message": "FAIL — 1 项不合规：\n  - C10 L3 门槛不满足: 高分4(需>=3) 总数4(需>=5)\n"
+    }
+  ],
+  "notes": ""
+}

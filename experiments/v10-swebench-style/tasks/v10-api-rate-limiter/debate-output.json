@@ -1,0 +1,46 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "Fix sliding window boundary",
+    "Fix request count logic",
+    "Fix blocked duration"
+  ],
+  "attacks": [
+    {
+      "description": "sliding window uses >= cutoff losing the oldest request (off-by-one)",
+      "target_dimension": "correctness",
+      "score": 5,
+      "scoring_rationale": "max_requests reached after N-1 requests"
+    },
+    {
+      "description": "allow_request counts the current request among N when it should be strictly < max before appending",
+      "target_dimension": "correctness",
+      "score": 5,
+      "scoring_rationale": "sliding window boundary mismatch"
+    },
+    {
+      "description": "blocked list uses now+window which is a moving target",
+      "target_dimension": "correctness",
+      "score": 4,
+      "scoring_rationale": "block duration effectively doubles"
+    },
+    {
+      "description": "no thread safety for blocked clients concurrent cleanup race",
+      "target_dimension": "concurrency",
+      "score": 4,
+      "scoring_rationale": "cleanup during allow_request unsafe"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

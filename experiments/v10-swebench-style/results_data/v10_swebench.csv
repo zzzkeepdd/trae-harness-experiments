@@ -1,0 +1,7 @@
+task,level,buggy_errors,a_bugs_fixed,b_bugs_fixed,a_regressions,b_regressions,a_fix_rate,b_fix_rate,a_fix_score,b_fix_score,orchestrator_passed,orchestrator_total
+v10-user-service,L2,0,0,0,2,0,0.0,0.0,-0.4,0.0,10,11
+v10-order-processor,L2,0,0,0,0,0,0.0,0.0,0.0,0.0,10,11
+v10-config-loader,L2,0,0,0,0,0,0.0,0.0,0.0,0.0,10,11
+v10-api-rate-limiter,L3,0,0,0,0,0,0.0,0.0,0.0,0.0,4,5
+v10-file-sync,L3,2,2,2,0,0,1.0,1.0,1.0,1.0,4,5
+v10-payment-gateway,L3,0,0,0,0,0,0.0,0.0,0.0,0.0,4,5
