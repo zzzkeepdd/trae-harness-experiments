@@ -431,13 +431,33 @@ def merge_proposals(proposals: list[dict]):
     else:
         new_version = "v1.4.0"
 
+    existing_ids = set()
+    for l in text.split("\n"):
+        m = re.match(r'\|\s*C(\d+)\s*\|', l.strip())
+        if m:
+            existing_ids.add(int(m.group(1)))
+
+    skipped = 0
+    added_rules = []
+    for p in proposals:
+        if p["id"] in existing_ids:
+            print(f"  ⚠ C{p['id']:02d} 已存在，跳过")
+            skipped += 1
+            continue
+        added_rules.append(p)
+        existing_ids.add(p["id"])
+
+    if not added_rules:
+        print("  ⚠ 所有提议规则均已存在，无需合并")
+        return
+
     new_rules = "\n".join(
         f"| C{p['id']:02d} | {p['content'][:100]} | {p['applies']} | {p['group']} |"
-        for p in proposals
+        for p in added_rules
     )
 
-    new_record = f"- {new_version}: 新增 C{proposals[0]['id']:02d}" + (
-        f"-C{proposals[-1]['id']:02d}" if len(proposals) > 1 else ""
+    new_record = f"- {new_version}: 新增 C{added_rules[0]['id']:02d}" + (
+        f"-C{added_rules[-1]['id']:02d}" if len(added_rules) > 1 else ""
     ) + f" — {datetime.now().strftime('%Y-%m-%d')} (experiment-loop)"
 
     if "## 修订记录" in text:

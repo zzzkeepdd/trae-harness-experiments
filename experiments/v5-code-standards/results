@@ -1,25 +1,25 @@
 {
   "a": {
-    "flake8_violations": 0.0,
+    "flake8_violations": 13.0,
     "pylint_score": 0.0,
     "mi": 0.0,
-    "cc": 0.0
+    "cc": 4.5
   },
   "b": {
-    "flake8_violations": 0.0,
+    "flake8_violations": 5.3,
     "pylint_score": 0.0,
     "mi": 0.0,
-    "cc": 0.0
+    "cc": 4.5
   },
   "metrics": {
-    "avg_a_flake8": 0.0,
-    "avg_b_flake8": 0.0,
+    "avg_a_flake8": 13.0,
+    "avg_b_flake8": 5.3,
     "avg_a_pylint": 0.0,
     "avg_b_pylint": 0.0,
     "avg_a_mi": 0.0,
     "avg_b_mi": 0.0,
-    "avg_a_cc": 0.0,
-    "avg_b_cc": 0.0,
+    "avg_a_cc": 4.5,
+    "avg_b_cc": 4.5,
     "flake8_available": true,
     "pylint_available": true,
     "radon_available": false
@@ -29,19 +29,19 @@
       "task": "l1-1-string-utils",
       "level": "L1",
       "a": {
-        "flake8": 0,
+        "flake8": 14,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 6.0
       },
       "b": {
-        "flake8": 0,
+        "flake8": 5,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 6.0
       },
       "improvement": {
-        "flake8_delta": 0,
+        "flake8_delta": 9,
         "pylint_delta": 0.0,
         "mi_delta": 0
       }
@@ -50,19 +50,19 @@
       "task": "l1-2-list-utils",
       "level": "L1",
       "a": {
-        "flake8": 0,
+        "flake8": 20,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 6.0
       },
       "b": {
-        "flake8": 0,
+        "flake8": 4,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 6.0
       },
       "improvement": {
-        "flake8_delta": 0,
+        "flake8_delta": 16,
         "pylint_delta": 0.0,
         "mi_delta": 0
       }
@@ -71,19 +71,19 @@
       "task": "l2-1-cache",
       "level": "L2",
       "a": {
-        "flake8": 0,
+        "flake8": 9,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 3.0
       },
       "b": {
-        "flake8": 0,
+        "flake8": 1,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 3.0
       },
       "improvement": {
-        "flake8_delta": 0,
+        "flake8_delta": 8,
         "pylint_delta": 0.0,
         "mi_delta": 0
       }
@@ -92,19 +92,19 @@
       "task": "l2-2-csv-processor",
       "level": "L2",
       "a": {
-        "flake8": 0,
+        "flake8": 5,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 6.0
       },
       "b": {
-        "flake8": 0,
+        "flake8": 6,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 6.0
       },
       "improvement": {
-        "flake8_delta": 0,
+        "flake8_delta": -1,
         "pylint_delta": 0.0,
         "mi_delta": 0
       }
@@ -113,19 +113,19 @@
       "task": "l3-1-task-queue",
       "level": "L3",
       "a": {
-        "flake8": 0,
+        "flake8": 10,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 3.0
       },
       "b": {
-        "flake8": 0,
+        "flake8": 6,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 3.0
       },
       "improvement": {
-        "flake8_delta": 0,
+        "flake8_delta": 4,
         "pylint_delta": 0.0,
         "mi_delta": 0
       }
@@ -134,19 +134,19 @@
       "task": "l3-2-session-manager",
       "level": "L3",
       "a": {
-        "flake8": 0,
+        "flake8": 20,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 3.0
       },
       "b": {
-        "flake8": 0,
+        "flake8": 10,
         "pylint": 0.0,
         "mi": 0,
-        "cc": 0
+        "cc": 3.0
       },
       "improvement": {
-        "flake8_delta": 0,
+        "flake8_delta": 10,
         "pylint_delta": 0.0,
         "mi_delta": 0
       }
