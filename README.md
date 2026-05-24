@@ -142,6 +142,15 @@ v11 LiveCodeBench      ⬜   ⬜    ⬜    ⬜    ⬜   ✅ 100%
 
 **核心结论**：在这些公开基准不测的维度上，Harness 将 DSV4 Pro 的工程代码质量大幅提升。这些是新赛道——御三家在这些维度上没有公开数据可对比。
 
+## Token ROI 分析
+
+完整的 Token 节省量和 ROI 分析请见：[`analysis/token-savings-analysis.md`](analysis/token-savings-analysis.md)
+
+核心结论：
+- **单次任务 ROI +29.8%**（下限），上限可达 +270%
+- **年度化节省约 1376 万 tokens**（按 100 次任务计算）
+- **L3 复杂任务 ROI 可超过 +500%**
+
 ## 目录结构
 
 ```
@@ -154,6 +163,7 @@ trae-harness-experiments/
 │   ├── ability-matrix.md            # 能力提升全矩阵
 │   ├── big3-comparison.md           # 御三家公开基准对比
 │   ├── module3-retrospective-v5-v11.md  # v5-v11 Module 3 复盘
+│   ├── token-savings-analysis.md    # Token 节省量和 ROI 分析
 │   └── methodology.md               # 实验方法论
 ├── experiments/
 │   ├── v1-baseline/                 # 原始 A/B 对照
