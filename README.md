@@ -147,9 +147,10 @@ v11 LiveCodeBench      ⬜   ⬜    ⬜    ⬜    ⬜   ✅ 100%
 完整的 Token 节省量和 ROI 分析请见：[`analysis/token-savings-analysis.md`](analysis/token-savings-analysis.md)
 
 核心结论：
-- **单次任务 ROI +29.8%**（下限），上限可达 +270%
-- **年度化节省约 1376 万 tokens**（按 100 次任务计算）
-- **L3 复杂任务 ROI 可超过 +500%**
+- **单次任务 ROI +289.5%**（下限），中位数 +529.5%，上限 +779.5%
+- **上下文拆分固定净赚 7,500 tokens/次**（不管有没有 bug 都省）
+- **年度化节省约 1451 万 tokens**（按 100 次任务计算）
+- **L3 复杂任务 ROI 可超过 +1000%**
 
 ## 目录结构
 
