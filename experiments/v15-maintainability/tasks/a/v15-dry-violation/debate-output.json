@@ -1,0 +1,39 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L1",
+  "must_fix": [
+    "Reduce complexity",
+    "Improve code structure"
+  ],
+  "attacks": [
+    {
+      "description": "Maintainability analysis for v15-dry-violation",
+      "target_dimension": "maintainability",
+      "score": 5,
+      "scoring_rationale": "code structure quality"
+    },
+    {
+      "description": "Code smell detection",
+      "target_dimension": "code_quality",
+      "score": 4,
+      "scoring_rationale": "anti-pattern detection"
+    },
+    {
+      "description": "Refactoring safety verification",
+      "target_dimension": "safety",
+      "score": 4,
+      "scoring_rationale": "refactoring impact"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

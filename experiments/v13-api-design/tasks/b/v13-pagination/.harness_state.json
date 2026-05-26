@@ -1,0 +1,35 @@
+{
+  "project_name": "v13-pagination",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-26T09:35:22.711840",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-26T09:35:22.814792"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-26T09:35:22.864985"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-26T09:35:22.916488"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-26T09:35:22.966745"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-26T09:35:23.056893",
+      "message": "FAIL — 2 项不合规：\n  - 攻击点不足: 3 < 4（维度数2 x2）\n  - C10 L2 门槛不满足: 高分3(需>=2) 总数3(需>=4)\n"
+    }
+  ],
+  "notes": ""
+}

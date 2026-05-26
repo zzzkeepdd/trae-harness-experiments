@@ -1,0 +1,35 @@
+{
+  "project_name": "v15-deep-nesting",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-26T09:38:56.570343",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:56.671795"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:56.723010"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:56.774356"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:56.828474"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-26T09:38:56.913382",
+      "message": "FAIL — 1 项不合规：\n  - 攻击点不足: 3 < 4（维度数2 x2）\n"
+    }
+  ],
+  "notes": ""
+}

@@ -1,0 +1,5 @@
+task,a_score,a_max,a_pct,b_score,b_max,b_pct,delta_pct,harness_a_passed,harness_a_total,harness_a_pct,harness_b_passed,harness_b_total,harness_b_pct
+v15-dry-violation,0,1,0.0,0,1,0.0,0.0,4,5,80.0,4,5,80.0
+v15-circular-deps,1,4,25.0,4,4,100.0,75.0,4,5,80.0,4,5,80.0
+v15-deep-nesting,1,5,20.0,5,5,100.0,80.0,4,5,80.0,4,5,80.0
+v15-god-class,1,5,20.0,5,5,100.0,80.0,4,5,80.0,4,5,80.0

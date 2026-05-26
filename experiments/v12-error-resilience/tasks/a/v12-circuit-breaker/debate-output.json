@@ -1,0 +1,39 @@
+{
+  "rounds_completed": 2,
+  "converged": true,
+  "complexity_level": "L3",
+  "must_fix": [
+    "Handle all error paths",
+    "Add graceful degradation"
+  ],
+  "attacks": [
+    {
+      "description": "Error resilience analysis for v12-circuit-breaker",
+      "target_dimension": "robustness",
+      "score": 5,
+      "scoring_rationale": "error handling quality"
+    },
+    {
+      "description": "Boundary condition stress test",
+      "target_dimension": "robustness",
+      "score": 4,
+      "scoring_rationale": "edge case coverage"
+    },
+    {
+      "description": "Failover scenario verification",
+      "target_dimension": "resilience",
+      "score": 4,
+      "scoring_rationale": "degradation path testing"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

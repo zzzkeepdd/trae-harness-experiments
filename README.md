@@ -8,37 +8,47 @@
 
 ## 实验总览
 
-| 版本 | 实验维度 | Harness | A 组 | B 组 | Δ | 结论 |
-|:---:|------|:---:|------|------|:---:|:---:|
-| v1 | 原始 A/B 对照 | v1.1 | 0/6 audit | 6/6 audit | - | 无法量化 |
-| v2 | 独立测试驱动 | v1.2 | 92% | 99% | **+7%** | WIN |
-| v3 | 编排器强制执行 | v1.2+编排器 | 90% | **100%** | **+10%** | WIN |
-| v4 | 测试质量 | v1.3 | 断言 28 | 断言 124 | **×4.4** | WIN |
-| v5 | 代码规范 | v1.4 | flake8=13.0 | flake8=5.3 | **↓59%** | WIN |
-| v6 | 安全防御 | v1.4 | CWE=0.5 | CWE=2.2 | **↑340%** | WIN |
-| v7 | Module 3 长期学习 | v1.4 | 复发 20 | 复发 2 | **↓91.7%** | WIN |
-| v8 | 性能优化 | v1.4 | 1.0x | 4.61x | **×4.61** | WIN |
-| v9 | HumanEval 函数补全 | v1.4 | 84.6% | 88.5% | **+3.9%** | WIN |
-| v10 | SWE-bench 修 bug | v1.4 | bugs=2 | bugs=0 | **↓100%** | PARTIAL |
-| v11 | LiveCodeBench 竞赛 | v1.4 | 59.1% | 59.1% | 0 | PARTIAL |
+| 版本 | 实验维度 | A 组 | B 组 | Δ | 结论 |
+|:---:|------|------|------|:---:|:---:|
+| v1 | 原始 A/B 对照 | 0/6 audit | 6/6 audit | - | 无法量化 |
+| v2 | 独立测试驱动 | 92% | 99% | **+7%** | WIN |
+| v3 | 编排器强制执行 | 90% | **100%** | **+10%** | WIN |
+| v4 | 测试质量 | 断言 28 | 断言 124 | **×4.4** | WIN |
+| v5 | 代码规范 | flake8=13.0 | flake8=5.3 | **↓59%** | WIN |
+| v6 | 安全防御 | CWE=0.5 | CWE=2.2 | **↑340%** | WIN |
+| v7 | Module 3 长期学习 | 复发 20 | 复发 2 | **↓91.7%** | WIN |
+| v8 | 性能优化 | 1.0x | 4.61x | **×4.61** | WIN |
+| v9 | HumanEval 函数补全 | 84.6% | 88.5% | **+3.9%** | WIN |
+| v10 | SWE-bench 修 bug | bugs=2 | bugs=0 | **↓100%** | PARTIAL |
+| v11 | LiveCodeBench 竞赛 | 59.1% | 59.1% | 0 | PARTIAL |
+| v12 | 错误弹性 | 8.3% | **100%** | **+91.7%** | WIN |
+| v13 | API 设计规范 | 12.5% | **95.8%** | **+83.3%** | WIN |
+| v14 | 文档完整度 | 4.2% | **85.8%** | **+81.7%** | WIN |
+| v15 | 可维护性 | 16.2% | **75.0%** | **+58.8%** | WIN |
+| v16 | 链式任务 | 23.6% | **65.3%** | **+41.7%** | WIN |
 
 > v10 bug 注入力度不足（待改进），v11 基准题库对两组无差异（待重新设计）。所有实验 orchestrator 100% 完成率。
 
 ## 能力提升矩阵
 
 ```
-                    正确性  规范  安全  学习  性能  流程
-v1 原始对照            ⬜    ⬜    ⬜    ⬜    ⬜   ❌ 12%
-v2 独立测试            ✅   ⬜    ⬜    ⬜    ⬜   ❌ 12%
-v3 编排器              ✅   ⬜    ⬜    ⬜    ⬜   ✅ 100%
-v4 测试质量            ✅   ⬜    ⬜    ⬜    ⬜   ✅ 100%
-v5 代码规范            ✅   ✅    ⬜    ⬜    ⬜   ✅ 100%
-v6 安全防御            ✅   ⬜    ✅    ⬜    ⬜   ✅ 100%
-v7 Module 3 学习       ✅   ⬜    ⬜    ✅    ⬜   ✅ 100%
-v8 性能优化            ✅   ⬜    ⬜    ⬜    ✅   ✅ 100%
-v9 HumanEval           ✅   ⬜    ⬜    ⬜    ⬜   ✅ 100%
-v10 SWE-bench          ✅   ⬜    ⬜    ⬜    ⬜   ✅ 100%
-v11 LiveCodeBench      ⬜   ⬜    ⬜    ⬜    ⬜   ✅ 100%
+                    正确性  规范  安全  学习  性能  流程  弹性  API  文档  维护  链式
+v1 原始对照            ⬜    ⬜    ⬜    ⬜    ⬜   ❌   ⬜   ⬜   ⬜   ⬜   ⬜
+v2 独立测试            ✅   ⬜    ⬜    ⬜    ⬜   ❌   ⬜   ⬜   ⬜   ⬜   ⬜
+v3 编排器              ✅   ⬜    ⬜    ⬜    ⬜   ✅   ⬜   ⬜   ⬜   ⬜   ⬜
+v4 测试质量            ✅   ⬜    ⬜    ⬜    ⬜   ✅   ⬜   ⬜   ⬜   ⬜   ⬜
+v5 代码规范            ✅   ✅    ⬜    ⬜    ⬜   ✅   ⬜   ⬜   ⬜   ⬜   ⬜
+v6 安全防御            ✅   ⬜    ✅    ⬜    ⬜   ✅   ⬜   ⬜   ⬜   ⬜   ⬜
+v7 Module 3 学习       ✅   ⬜    ⬜    ✅    ⬜   ✅   ⬜   ⬜   ⬜   ⬜   ⬜
+v8 性能优化            ✅   ⬜    ⬜    ⬜    ✅   ✅   ⬜   ⬜   ⬜   ⬜   ⬜
+v9 HumanEval           ✅   ⬜    ⬜    ⬜    ⬜   ✅   ⬜   ⬜   ⬜   ⬜   ⬜
+v10 SWE-bench          ✅   ⬜    ⬜    ⬜    ⬜   ✅   ⬜   ⬜   ⬜   ⬜   ⬜
+v11 LiveCodeBench      ⬜   ⬜    ⬜    ⬜    ⬜   ✅   ⬜   ⬜   ⬜   ⬜   ⬜
+v12 错误弹性            ✅   ⬜    ⬜    ⬜    ⬜   ✅   ✅   ⬜   ⬜   ⬜   ⬜
+v13 API 设计            ✅   ⬜    ⬜    ⬜    ⬜   ✅   ⬜   ✅   ⬜   ⬜   ⬜
+v14 文档完整度          ✅   ⬜    ⬜    ⬜    ⬜   ✅   ⬜   ⬜   ✅   ⬜   ⬜
+v15 可维护性            ✅   ⬜    ⬜    ⬜    ⬜   ✅   ⬜   ⬜   ⬜   ✅   ⬜
+v16 链式任务            ✅   ⬜    ⬜    ⬜    ⬜   ✅   ⬜   ⬜   ⬜   ⬜   ✅
 ```
 
 ## 各实验详细结果
@@ -148,6 +158,76 @@ v11 LiveCodeBench      ⬜   ⬜    ⬜    ⬜    ⬜   ✅ 100%
 | total | 44 | 44 | — |
 | passed | 26 | 26 | — |
 
+### v12 错误弹性（retry / circuit-breaker / input-validation / graceful-degrade）
+
+| 任务 | A 组 | B 组 | Δ |
+|------|:---:|:---:|:---:|
+| retry-handler | 33.3% | 100% | +66.7% |
+| circuit-breaker | 0% | 100% | +100% |
+| input-validator | 0% | 100% | +100% |
+| graceful-degrade | 0% | 100% | +100% |
+| **平均** | **8.3%** | **100%** | **+91.7%** |
+
+> A 组在 3/4 任务中完全未实现错误处理逻辑（0%），Harness 通过辩论引导出完整的容错模式。
+
+### v13 API 设计规范（REST / pagination / versioning / error-format）
+
+| 任务 | A 组 | B 组 | Δ |
+|------|:---:|:---:|:---:|
+| rest-api | 50.0% | 100% | +50.0% |
+| pagination | 0% | 100% | +100% |
+| versioning | 0% | 83.3% | +83.3% |
+| error-format | 0% | 100% | +100% |
+| **平均** | **12.5%** | **95.8%** | **+83.3%** |
+
+> A 组 API 设计缺少标准化，B 组在辩论中自动对齐 RESTful 最佳实践。
+
+### v14 文档完整度（docstrings / type-hints / readme / examples）
+
+| 任务 | A 组 | B 组 | Δ |
+|------|:---:|:---:|:---:|
+| docstrings | 0% | 100% | +100% |
+| type-hints | 0% | 100% | +100% |
+| readme | 16.7% | 83.3% | +66.7% |
+| examples | 0% | 60.0% | +60.0% |
+| **平均** | **4.2%** | **85.8%** | **+81.7%** |
+
+> A 组几乎零文档产出。Harness 辩论后自动补全 docstrings、类型注解和 README。
+
+### v15 可维护性（DRY / circular-deps / deep-nesting / god-class）
+
+| 任务 | A 组 | B 组 | Δ |
+|------|:---:|:---:|:---:|
+| dry-violation | 0% | 0% | 0 |
+| circular-deps | 25.0% | 100% | +75.0% |
+| deep-nesting | 20.0% | 100% | +80.0% |
+| god-class | 20.0% | 100% | +80.0% |
+| **平均** | **16.2%** | **75.0%** | **+58.8%** |
+
+> DRY 任务两组均为 0%（模型在这一维度天然弱）。其余 3 项 Harness 均大幅领先。
+
+### v16 链式任务（ETL pipeline / auth-flow / build-deploy）
+
+| 任务 | A 组 | B 组 | Δ |
+|------|:---:|:---:|:---:|
+| etl-pipeline | 33.3% | 83.3% | +50.0% |
+| auth-flow | 12.5% | 25.0% | +12.5% |
+| build-deploy | 25.0% | 87.5% | +62.5% |
+| **平均** | **23.6%** | **65.3%** | **+41.7%** |
+
+> 链式任务对流程编排要求高，Harness 提升显著但仍有余地（auth-flow 仅 25%），说明复杂多步骤任务是硬骨头。
+
+## v12-v16 复盘 → 宪法 v2.1
+
+v12-v16 批次实验触发了 Module 3 复盘，产出两条新宪法规则：
+
+| 规则 | 内容 | 实验依据 |
+|:--:|------|------|
+| **C40** | 多维度质量门：代码异味、复杂度、dead code、安全漏洞、性能瓶颈 — 5 维度在 TEST_GATE 统一验证 | v12 错误弹性 + v13 API 设计 + v14 文档 + v15 可维护性 |
+| **C41** | 攻击维度注入机制：must_fix ↔ attacks 绑定，从复盘自动提取攻击维度 | v12-v16 全批次：攻击越精准，B 组提升越大 |
+
+宪法同时进行了工程化重构——41 条规则按阶段拆分到 8 个文件中，每阶段 ≤7 条，AI 不再一次性接收全部规则。
+
 ## 御三家对比
 
 ### DeepSeek V4 Pro 在公开基准上的位置
@@ -170,6 +250,11 @@ v11 LiveCodeBench      ⬜   ⬜    ⬜    ⬜    ⬜   ✅ 100%
 | 长期学习 (复发率) | ❌ | 20 | 2 | ↓91.7% |
 | 性能 (加速比) | ❌ | 1.0x | 4.61x | ×4.61 |
 | 测试断言密度 | ❌ | 28 | 124 | ×4.4 |
+| 错误弹性 | ❌ | 8.3% | 100% | +91.7% |
+| API 设计规范 | ❌ | 12.5% | 95.8% | +83.3% |
+| 文档完整度 | ❌ | 4.2% | 85.8% | +81.7% |
+| 可维护性 | ❌ | 16.2% | 75.0% | +58.8% |
+| 链式任务 | ❌ | 23.6% | 65.3% | +41.7% |
 
 **核心结论**：在这些公开基准不测的维度上，Harness 将 DSV4 Pro 的工程代码质量大幅提升。这些是新赛道——御三家在这些维度上没有公开数据可对比。
 
@@ -193,9 +278,12 @@ trae-harness-experiments/
 ├── analysis/
 │   ├── ability-matrix.md            # 能力提升全矩阵
 │   ├── big3-comparison.md           # 御三家公开基准对比
+│   ├── master-log.md                # 主实验日志
+│   ├── methodology.md               # 实验方法论
 │   ├── module3-retrospective-v5-v11.md  # v5-v11 Module 3 复盘
+│   ├── next-experiments-plan.md     # 后续实验路线图
 │   ├── token-savings-analysis.md    # Token 节省量和 ROI 分析
-│   └── methodology.md               # 实验方法论
+│   └── v1-v2-v3-comparison.md       # 早期实验对比
 ├── experiments/
 │   ├── v1-baseline/                 # 原始 A/B 对照
 │   ├── v2-independent-tests/        # 独立测试套件
@@ -207,7 +295,12 @@ trae-harness-experiments/
 │   ├── v8-performance/              # 性能优化
 │   ├── v9-humaneval-style/          # HumanEval 风格
 │   ├── v10-swebench-style/          # SWE-bench 风格
-│   └── v11-livecodebench-style/     # LiveCodeBench 风格
+│   ├── v11-livecodebench-style/     # LiveCodeBench 风格
+│   ├── v12-error-resilience/        # 错误弹性
+│   ├── v13-api-design/              # API 设计规范
+│   ├── v14-documentation/           # 文档完整度
+│   ├── v15-maintainability/         # 可维护性
+│   └── v16-chained-tasks/           # 链式任务
 └── tasks/                           # 共享任务定义
 ```
 
@@ -227,4 +320,4 @@ python experiment-loop.py run v5
 ## 依赖
 
 - Python 3.12+
-- [trae-harness](https://github.com/zzzkeepdd/trae-harness) v1.5.0+
+- [trae-harness](https://github.com/zzzkeepdd/trae-harness) v2.1+

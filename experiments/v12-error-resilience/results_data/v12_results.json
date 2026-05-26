@@ -1,0 +1,79 @@
+{
+  "a": {
+    "avg_resilience_pct": 8.3
+  },
+  "b": {
+    "avg_resilience_pct": 100.0
+  },
+  "metrics": {
+    "avg_a_pct": 8.3,
+    "avg_b_pct": 100.0,
+    "delta_pct": 91.7
+  },
+  "tasks": [
+    {
+      "task": "v12-retry-handler",
+      "a_score": 2,
+      "a_max": 6,
+      "a_pct": 33.3,
+      "b_score": 6,
+      "b_max": 6,
+      "b_pct": 100.0,
+      "delta_pct": 66.7,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v12-circuit-breaker",
+      "a_score": 0,
+      "a_max": 1,
+      "a_pct": 0.0,
+      "b_score": 5,
+      "b_max": 5,
+      "b_pct": 100.0,
+      "delta_pct": 100.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v12-input-validator",
+      "a_score": 0,
+      "a_max": 1,
+      "a_pct": 0.0,
+      "b_score": 7,
+      "b_max": 7,
+      "b_pct": 100.0,
+      "delta_pct": 100.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v12-graceful-degrade",
+      "a_score": 0,
+      "a_max": 1,
+      "a_pct": 0.0,
+      "b_score": 6,
+      "b_max": 6,
+      "b_pct": 100.0,
+      "delta_pct": 100.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    }
+  ]
+}

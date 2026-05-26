@@ -1,0 +1,39 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Handle pipeline errors",
+    "Add stage tracking"
+  ],
+  "attacks": [
+    {
+      "description": "Pipeline robustness for v16-auth-flow",
+      "target_dimension": "robustness",
+      "score": 5,
+      "scoring_rationale": "error handling in pipeline"
+    },
+    {
+      "description": "Chain failure propagation",
+      "target_dimension": "resilience",
+      "score": 4,
+      "scoring_rationale": "failure isolation"
+    },
+    {
+      "description": "Multi-step orchestration quality",
+      "target_dimension": "orchestration",
+      "score": 4,
+      "scoring_rationale": "stage coordination"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

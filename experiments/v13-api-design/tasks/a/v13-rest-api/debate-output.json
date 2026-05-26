@@ -1,0 +1,39 @@
+{
+  "rounds_completed": 1,
+  "converged": true,
+  "complexity_level": "L2",
+  "must_fix": [
+    "Standardize error format",
+    "Add input validation"
+  ],
+  "attacks": [
+    {
+      "description": "API design quality for v13-rest-api",
+      "target_dimension": "api_design",
+      "score": 5,
+      "scoring_rationale": "RESTful adherence"
+    },
+    {
+      "description": "Input validation and error handling",
+      "target_dimension": "robustness",
+      "score": 4,
+      "scoring_rationale": "validation coverage"
+    },
+    {
+      "description": "Response format consistency",
+      "target_dimension": "consistency",
+      "score": 4,
+      "scoring_rationale": "uniform response envelope"
+    }
+  ],
+  "dimensions_covered": [
+    {
+      "name": "boundary & correctness",
+      "status": "covered"
+    },
+    {
+      "name": "safety & security",
+      "status": "covered"
+    }
+  ]
+}

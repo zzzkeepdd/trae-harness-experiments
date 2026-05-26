@@ -1,0 +1,5 @@
+task,a_score,a_max,a_pct,b_score,b_max,b_pct,delta_pct,harness_a_passed,harness_a_total,harness_a_pct,harness_b_passed,harness_b_total,harness_b_pct
+v12-retry-handler,2,6,33.3,6,6,100.0,66.7,4,5,80.0,4,5,80.0
+v12-circuit-breaker,0,1,0.0,5,5,100.0,100.0,4,5,80.0,4,5,80.0
+v12-input-validator,0,1,0.0,7,7,100.0,100.0,4,5,80.0,4,5,80.0
+v12-graceful-degrade,0,1,0.0,6,6,100.0,100.0,4,5,80.0,4,5,80.0

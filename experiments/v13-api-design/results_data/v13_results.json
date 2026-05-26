@@ -1,0 +1,79 @@
+{
+  "a": {
+    "avg_api_pct": 12.5
+  },
+  "b": {
+    "avg_api_pct": 95.8
+  },
+  "metrics": {
+    "avg_a_pct": 12.5,
+    "avg_b_pct": 95.8,
+    "delta_pct": 83.3
+  },
+  "tasks": [
+    {
+      "task": "v13-rest-api",
+      "a_score": 3,
+      "a_max": 6,
+      "a_pct": 50.0,
+      "b_score": 6,
+      "b_max": 6,
+      "b_pct": 100.0,
+      "delta_pct": 50.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v13-pagination",
+      "a_score": 0,
+      "a_max": 1,
+      "a_pct": 0.0,
+      "b_score": 6,
+      "b_max": 6,
+      "b_pct": 100.0,
+      "delta_pct": 100.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v13-versioning",
+      "a_score": 0,
+      "a_max": 1,
+      "a_pct": 0.0,
+      "b_score": 5,
+      "b_max": 6,
+      "b_pct": 83.3,
+      "delta_pct": 83.3,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v13-error-format",
+      "a_score": 0,
+      "a_max": 8,
+      "a_pct": 0.0,
+      "b_score": 8,
+      "b_max": 8,
+      "b_pct": 100.0,
+      "delta_pct": 100.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    }
+  ]
+}

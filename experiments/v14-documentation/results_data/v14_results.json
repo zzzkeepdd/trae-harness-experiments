@@ -1,0 +1,79 @@
+{
+  "a": {
+    "avg_doc_pct": 4.2
+  },
+  "b": {
+    "avg_doc_pct": 85.8
+  },
+  "metrics": {
+    "avg_a_pct": 4.2,
+    "avg_b_pct": 85.8,
+    "delta_pct": 81.7
+  },
+  "tasks": [
+    {
+      "task": "v14-docstrings",
+      "a_score": 0,
+      "a_max": 12,
+      "a_pct": 0.0,
+      "b_score": 12,
+      "b_max": 12,
+      "b_pct": 100.0,
+      "delta_pct": 100.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v14-type-hints",
+      "a_score": 0,
+      "a_max": 7,
+      "a_pct": 0.0,
+      "b_score": 7,
+      "b_max": 7,
+      "b_pct": 100.0,
+      "delta_pct": 100.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v14-readme",
+      "a_score": 1,
+      "a_max": 6,
+      "a_pct": 16.7,
+      "b_score": 5,
+      "b_max": 6,
+      "b_pct": 83.3,
+      "delta_pct": 66.7,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v14-examples",
+      "a_score": 0,
+      "a_max": 10,
+      "a_pct": 0.0,
+      "b_score": 6,
+      "b_max": 10,
+      "b_pct": 60.0,
+      "delta_pct": 60.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "project_name": "v14-readme",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-26T09:38:55.282561",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:55.385849"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:55.439044"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:55.490318"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:55.540740"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-26T09:38:55.630216",
+      "message": "FAIL — 1 项不合规：\n  - 攻击点不足: 3 < 4（维度数2 x2）\n"
+    }
+  ],
+  "notes": ""
+}

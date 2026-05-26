@@ -1,0 +1,63 @@
+{
+  "a": {
+    "avg_pipeline_pct": 23.6
+  },
+  "b": {
+    "avg_pipeline_pct": 65.3
+  },
+  "metrics": {
+    "avg_a_pct": 23.6,
+    "avg_b_pct": 65.3,
+    "delta_pct": 41.7
+  },
+  "tasks": [
+    {
+      "task": "v16-etl-pipeline",
+      "a_score": 2,
+      "a_max": 6,
+      "a_pct": 33.3,
+      "b_score": 5,
+      "b_max": 6,
+      "b_pct": 83.3,
+      "delta_pct": 50.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v16-auth-flow",
+      "a_score": 1,
+      "a_max": 8,
+      "a_pct": 12.5,
+      "b_score": 2,
+      "b_max": 8,
+      "b_pct": 25.0,
+      "delta_pct": 12.5,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v16-build-deploy",
+      "a_score": 2,
+      "a_max": 8,
+      "a_pct": 25.0,
+      "b_score": 7,
+      "b_max": 8,
+      "b_pct": 87.5,
+      "delta_pct": 62.5,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    }
+  ]
+}

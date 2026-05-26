@@ -1,0 +1,35 @@
+{
+  "project_name": "v15-god-class",
+  "pipeline_level": "L2",
+  "current_phase": "GATE_1",
+  "created_at": "2026-05-26T09:38:57.427398",
+  "history": [
+    {
+      "phase": "INIT",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:57.527177"
+    },
+    {
+      "phase": "PHASE_0",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:57.577997"
+    },
+    {
+      "phase": "PHASE_1",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:57.628769"
+    },
+    {
+      "phase": "PHASE_2",
+      "status": "PASS",
+      "time": "2026-05-26T09:38:57.680894"
+    },
+    {
+      "phase": "GATE_1",
+      "status": "FAIL",
+      "time": "2026-05-26T09:38:57.768258",
+      "message": "FAIL — 2 项不合规：\n  - 攻击点不足: 3 < 4（维度数2 x2）\n  - C10 L2 门槛不满足: 高分3(需>=2) 总数3(需>=4)\n"
+    }
+  ],
+  "notes": ""
+}

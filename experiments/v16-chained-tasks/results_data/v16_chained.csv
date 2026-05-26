@@ -1,0 +1,4 @@
+task,a_score,a_max,a_pct,b_score,b_max,b_pct,delta_pct,harness_a_passed,harness_a_total,harness_a_pct,harness_b_passed,harness_b_total,harness_b_pct
+v16-etl-pipeline,2,6,33.3,5,6,83.3,50.0,4,5,80.0,4,5,80.0
+v16-auth-flow,1,8,12.5,2,8,25.0,12.5,4,5,80.0,4,5,80.0
+v16-build-deploy,2,8,25.0,7,8,87.5,62.5,4,5,80.0,4,5,80.0

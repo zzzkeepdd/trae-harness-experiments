@@ -1,0 +1,79 @@
+{
+  "a": {
+    "avg_maintainability_pct": 16.2
+  },
+  "b": {
+    "avg_maintainability_pct": 75.0
+  },
+  "metrics": {
+    "avg_a_pct": 16.2,
+    "avg_b_pct": 75.0,
+    "delta_pct": 58.8
+  },
+  "tasks": [
+    {
+      "task": "v15-dry-violation",
+      "a_score": 0,
+      "a_max": 1,
+      "a_pct": 0.0,
+      "b_score": 0,
+      "b_max": 1,
+      "b_pct": 0.0,
+      "delta_pct": 0.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v15-circular-deps",
+      "a_score": 1,
+      "a_max": 4,
+      "a_pct": 25.0,
+      "b_score": 4,
+      "b_max": 4,
+      "b_pct": 100.0,
+      "delta_pct": 75.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v15-deep-nesting",
+      "a_score": 1,
+      "a_max": 5,
+      "a_pct": 20.0,
+      "b_score": 5,
+      "b_max": 5,
+      "b_pct": 100.0,
+      "delta_pct": 80.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    },
+    {
+      "task": "v15-god-class",
+      "a_score": 1,
+      "a_max": 5,
+      "a_pct": 20.0,
+      "b_score": 5,
+      "b_max": 5,
+      "b_pct": 100.0,
+      "delta_pct": 80.0,
+      "harness_a_passed": 4,
+      "harness_a_total": 5,
+      "harness_a_pct": 80.0,
+      "harness_b_passed": 4,
+      "harness_b_total": 5,
+      "harness_b_pct": 80.0
+    }
+  ]
+}
